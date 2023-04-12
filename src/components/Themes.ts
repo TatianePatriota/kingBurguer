@@ -23,5 +23,7 @@ export const themes = {
     red: "#F43127",
     white: "#FFFFFF",
     menuColor: "#FAE4D0",
+    titleBlack: " #34201F",
+    titleLogo: "#1D0605",
   },
 };
