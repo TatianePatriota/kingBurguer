@@ -1,4 +1,4 @@
-export const themes = {
+export const theme = {
   font: {
     size: {
       small: 16,
@@ -17,13 +17,15 @@ export const themes = {
   },
   colors: {
     brownBackground: "#3B200B",
+    navBackground: "rgba(59, 32, 11, 0.05);",
     brownDark: "#34201F",
     brownLight: "#635352",
     yellow: "#F59A1B",
     red: "#F43127",
+    redDark: "#B50B04",
     white: "#FFFFFF",
     menuColor: "#FAE4D0",
     titleBlack: " #34201F",
-    titleLogo: "#1D0605",
+    titleLogo: "rgba(29, 6, 5, 0.9);",
   },
 };
