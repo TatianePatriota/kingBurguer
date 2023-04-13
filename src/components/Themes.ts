@@ -18,6 +18,7 @@ export const theme = {
   },
   colors: {
     brownBackground: "#3B200B",
+    backgroundLight: "#FAE2CB",
     navBackground: "rgba(59, 32, 11, 0.05);",
     brownDark: "#34201F",
     brownLight: "#635352",
@@ -27,7 +28,8 @@ export const theme = {
     white: "#FFFFFF",
     menuColor: "#FAE4D0",
     titleBlack: " #34201F",
-    titleBrown: "rgba(29, 6, 5, 0.9);",
+    titleBrown: "rgba(29, 6, 5, 0.9)",
     titleLightBrown: "rgba(29, 6, 5, 0.69)",
+    lightGrey: "rgba(73, 46, 21, 0.15)",
   },
 };
