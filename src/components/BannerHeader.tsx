@@ -9,6 +9,8 @@ export function BannerHeader({ children }: PropsWithChildren): JSX.Element {
 export const StyledBannerHeader = styled.div`
   background: url(${Banner});
   height: 545px;
+  width: 100%;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 `;
