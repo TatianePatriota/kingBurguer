@@ -1,5 +1,10 @@
 import { Button } from "./Button";
-import { IconHeaderLogoEmpire, IconIFood, Instragram } from "./CommonIcons";
+import {
+  IconHeaderLogoEmpire,
+  IconIFood,
+  Instragram,
+  WhatsApp,
+} from "./CommonIcons";
 import styled from "styled-components";
 
 export function Navigation() {
@@ -39,7 +44,9 @@ export function Navigation() {
           <Instragram />
         </div>
       </StyledIconNav>
-      <Button title="Contato" />
+      <Button>
+        <WhatsApp /> Contato
+      </Button>
     </StyledNav>
   );
 }
@@ -49,8 +56,8 @@ const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.navBackground};
   align-items: center;
   position: fixed;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
   ul {
     display: flex;
     justify-content: space-around;
@@ -93,7 +100,6 @@ export const StyledLogoEmpireBurguer = styled.div`
 `;
 
 const StyledIconNav = styled.div`
-  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
