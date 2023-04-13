@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  a {
+  a, li {
     text-decoration: none;
     list-style: none;
   }
