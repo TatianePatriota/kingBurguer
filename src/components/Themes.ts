@@ -5,11 +5,12 @@ export const theme = {
       middle: 18,
       default: 21,
     },
-  },
-  gutter: {
-    large: 40,
-    default: 32,
-    small: 28,
+    gutter: {
+      large: 40,
+      default: 32,
+      small: 28,
+      big: 78,
+    },
   },
   fonts: {
     fontLato: "'Lato', sans-serif",
@@ -26,6 +27,7 @@ export const theme = {
     white: "#FFFFFF",
     menuColor: "#FAE4D0",
     titleBlack: " #34201F",
-    titleLogo: "rgba(29, 6, 5, 0.9);",
+    titleBrown: "rgba(29, 6, 5, 0.9);",
+    titleLightBrown: "rgba(29, 6, 5, 0.69)",
   },
 };
