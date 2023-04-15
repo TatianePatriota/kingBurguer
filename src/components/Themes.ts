@@ -8,7 +8,7 @@ export const theme = {
     gutter: {
       large: 40,
       default: 32,
-      small: 28,
+      small: 26,
       big: 78,
     },
   },
@@ -18,7 +18,9 @@ export const theme = {
   },
   colors: {
     brownBackground: "#3B200B",
+    bodyBackground: "#FAF3F2",
     backgroundLight: "#FAE2CB",
+    backgroundImageColor: "rgba(250, 226, 203, 0.9)",
     navBackground: "rgba(59, 32, 11, 0.05);",
     brownDark: "#34201F",
     brownLight: "#635352",
@@ -26,6 +28,7 @@ export const theme = {
     red: "#F43127",
     redDark: "#B50B04",
     white: "#FFFFFF",
+    boldWhite: " rgba(255, 255, 255, 0.85)",
     menuColor: "#FAE4D0",
     titleBlack: " #34201F",
     titleBrown: "rgba(29, 6, 5, 0.9)",
