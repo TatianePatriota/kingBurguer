@@ -44,7 +44,7 @@ const StyledInformationHeader = styled.section`
   padding: 15px 5px;
   width: 970px;
   font-weight: 400;
-  margin: 0 auto;
+  margin: -50px auto;
 
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.white};
