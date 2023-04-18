@@ -16,17 +16,17 @@ export function SpecialOffers(): JSX.Element {
       </StyledTitleOffers>
       <StyledOffersImages>
         <StyledBurguerSpecialOffers>
-          <div>
+          <StyledBurguerTitle>
             <h2>Burger imperial+batata</h2>
             <p>250kg</p>
-          </div>
+          </StyledBurguerTitle>
           <div>
             <h3>
               Apenas <span>Hoje</span>
             </h3>
           </div>
         </StyledBurguerSpecialOffers>
-        <div>
+        <StyledOffersText>
           <StyledIceCreamSpecialOffers>
             <h4>batata</h4>
             <p>150kg</p>
@@ -35,7 +35,7 @@ export function SpecialOffers(): JSX.Element {
             <h4>Sorvete</h4>
             <p>50kg</p>
           </StyledPotatoSpecialOffers>
-        </div>
+        </StyledOffersText>
       </StyledOffersImages>
       <StyledContainerHours>
         <StyledOpeningHours>
@@ -58,11 +58,7 @@ export function SpecialOffers(): JSX.Element {
 }
 
 const StyledContainerSpecialOffers = styled.section`
-  padding-top: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  padding: 60px 375px;
 `;
 
 const StyledOffersImages = styled.div`
@@ -70,12 +66,55 @@ const StyledOffersImages = styled.div`
   justify-content: center;
 `;
 
+const StyledOffersText = styled.div`
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.titleBrown};
+
+  h4 {
+    font-size: ${({ theme }) => theme.font.size.default}px;
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+    text-transform: uppercase;
+    line-height: 22px;
+    padding-top: 12px;
+    padding-left: 20px;
+  }
+
+  p {
+    font-size: ${({ theme }) => theme.font.size.middle}px;
+    font-family: ${({ theme }) => theme.fonts.fontLato};
+    line-height: 25px;
+    margin: 0;
+    padding-left: 20px;
+  }
+`;
+
 const StyledBurguerSpecialOffers = styled.div`
   background: url(${Burguer});
   height: 545px;
   width: 770px;
+  margin-right: 20px;
   background-size: contain;
   background-repeat: no-repeat;
+  font-weight: 400;
+`;
+
+const StyledBurguerTitle = styled.div`
+  padding: 12px;
+  h2 {
+    font-size: ${({ theme }) => theme.font.gutter.small}px;
+    color: ${({ theme }) => theme.colors.lightWhite};
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: ${({ theme }) => theme.font.size.middle}px;
+    font-family: ${({ theme }) => theme.fonts.fontLato};
+    line-height: 25px;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.lightWhiteSeconday};
+  }
 `;
 
 const StyledIceCreamSpecialOffers = styled.div`
@@ -84,6 +123,7 @@ const StyledIceCreamSpecialOffers = styled.div`
   width: 370px;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-bottom: 30px;
 `;
 
 const StyledPotatoSpecialOffers = styled.div`
@@ -119,7 +159,7 @@ const StyledOpeningHours = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.red};
   border-radius: 10px;
-  padding: 28px 30px;
+  padding: 22px 76px 28px 30px;
 
   h2 {
     font-size: ${({ theme }) => theme.font.gutter.small}px;
@@ -149,11 +189,13 @@ const StyledTextInformations = styled.div`
 
 const StyledContainerHours = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledInstagramContent = styled.div`
   font-weight: 400;
+  padding-left: 30px;
+
   p {
     font-size: ${({ theme }) => theme.font.size.middle}px;
     font-family: ${({ theme }) => theme.fonts.fontLato};
