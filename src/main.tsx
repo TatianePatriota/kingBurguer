@@ -11,7 +11,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
-      <PersonalizedService />
     </ThemeProvider>
   </React.StrictMode>
 );
