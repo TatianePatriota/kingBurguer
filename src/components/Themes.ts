@@ -34,5 +34,8 @@ export const theme = {
     titleBrown: "rgba(29, 6, 5, 0.9)",
     titleLightBrown: "rgba(29, 6, 5, 0.69)",
     lightGrey: "rgba(73, 46, 21, 0.15)",
+    lightWhite: "rgba(255, 255, 255, 0.9)",
+    lightWhiteSeconday: "rgba(255, 255, 255, 0.69)",
+    lightGreySecondary: "rgba(29, 6, 5, 0.15)",
   },
 };
