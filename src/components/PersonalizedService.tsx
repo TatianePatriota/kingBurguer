@@ -5,38 +5,72 @@ import { PropsWithChildren } from "react";
 export function PersonalizedService(): JSX.Element {
   return (
     <StyledPersonalizedMenu>
-      <BackgroundColor>
+      <StyledBackgroundColor>
         <StyledPersonalizedImage></StyledPersonalizedImage>
-      </BackgroundColor>
-      <div>
-        <h1>Atendimento personalizado</h1>
+      </StyledBackgroundColor>
+      <StyledMenuText>
+        <h1>
+          Atendimento <span>personalizado</span>
+        </h1>
         <p>
           Todos os nossos clientes são tratados como rei e rainha, com a nossa
           colunaria artesanal.
         </p>
-        <LargeButton>Cardápio Imperial</LargeButton>
-      </div>
+        <LargeButton>
+          <a href="/">Cardápio Imperial</a>
+        </LargeButton>
+      </StyledMenuText>
     </StyledPersonalizedMenu>
   );
 }
-const StyledPersonalizedMenu = styled.div``;
+const StyledPersonalizedMenu = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 160px 375px 128px 375px;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
+`;
 
 const StyledPersonalizedImage = styled.div`
   background: url(${WomanEating});
-  width: 200px;
-  height: 575px;
+  width: 430px;
+  height: 455px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
 
-const StyledTextPersonalizedMenu = styled.div`
-  background-color: ${({ theme }) => theme.colors.menuColor};
-`;
-
-export function BackgroundColor({ children }: PropsWithChildren): JSX.Element {
-  return <StyledBackgroundColor></StyledBackgroundColor>;
-}
-
 export const StyledBackgroundColor = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundImageColor};
+  width: 570px;
+  height: 308px;
+  border-radius: 35px 154px 154px 35px;
+  display: flex;
+  align-items: flex-end;
+`;
+
+const StyledMenuText = styled.div`
+  width: 480px;
+  h1 {
+    color: ${({ theme }) => theme.colors.brownBackground};
+    text-transform: uppercase;
+    font-size: ${({ theme }) => theme.font.gutter.large}px;
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+    line-height: 46px;
+  }
+  span {
+    background-color: ${({ theme }) => theme.colors.yellow};
+  }
+  p {
+    font-size: ${({ theme }) => theme.font.size.default}px;
+    font-family: ${({ theme }) => theme.fonts.fontLato};
+    color: ${({ theme }) => theme.colors.titleLightBrown};
+  }
+
+  a {
+    font-weight: 700;
+    font-size: ${({ theme }) => theme.font.size.small}px;
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.font.size.default + 2}px;
+  }
 `;
