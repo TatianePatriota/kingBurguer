@@ -1,6 +1,7 @@
 import { HeaderComponent } from "./components/HeaderComponent";
 import { Menu } from "./components/Menu";
 import { PersonalizedService } from "./components/PersonalizedService";
+import { PublicationsInstagram } from "./components/PublicationsInstagram";
 import { SpecialOffers } from "./components/SpecialOffers";
 
 function App(): JSX.Element {
@@ -10,6 +11,7 @@ function App(): JSX.Element {
       <SpecialOffers />
       <Menu />
       <PersonalizedService />
+      <PublicationsInstagram />
     </div>
   );
 }
