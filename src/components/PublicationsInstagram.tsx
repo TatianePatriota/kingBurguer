@@ -11,13 +11,13 @@ import EighthBurguer from "../assets/images/Burguer08.png";
 export function PublicationsInstagram(): JSX.Element {
   return (
     <div>
-      <div>
+      <StyledPublicationsText>
         <h1>Publicações do Instagram</h1>
         <p>
           Todos os nossos clientes são tratados como rei e rainha, com a nossa
           colunaria artesanal.
         </p>
-      </div>
+      </StyledPublicationsText>
       <StyledHamburguersContainer>
         <StyledFristBurguer />
         <StyledSecondBurguer />
@@ -28,13 +28,40 @@ export function PublicationsInstagram(): JSX.Element {
         <StyledSeventhBurguer />
         <StyledEighthBurguer />
       </StyledHamburguersContainer>
+      <StyledText>
+        <p>
+          • #empireburger • #empireburger • #empireburger • #empireburger •
+          #empireburger • #empireburger • #empireburger • #empireburger •
+          #empire
+        </p>
+      </StyledText>
     </div>
   );
 }
 
+const StyledPublicationsText = styled.div`
+  font-weight: 400;
+  text-align: center;
+  margin-top: 120px;
+  h1 {
+    color: ${({ theme }) => theme.colors.titleBrown};
+    text-transform: uppercase;
+    font-size: ${({ theme }) => theme.font.gutter.default}px;
+    line-height: 35px;
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+  }
+
+  p {
+    color: ${({ theme }) => theme.colors.titleBrown};
+    font-family: ${({ theme }) => theme.fonts.fontLato};
+    line-height: 22px;
+    font-size: ${({ theme }) => theme.font.size.small}px;
+    margin-top: 4px;
+  }
+`;
+
 const StyledHamburguersContainer = styled.div`
   display: flex;
-  width: 100%;
 `;
 
 const StyledFristBurguer = styled.div`
@@ -99,4 +126,19 @@ const StyledEighthBurguer = styled.div`
   height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
+`;
+
+const StyledText = styled.div`
+  background-color: ${({ theme }) => theme.colors.yellow};
+  height: 30px;
+
+  p {
+    color: ${({ theme }) => theme.colors.titleBrown};
+    text-transform: uppercase;
+    text-align: center;
+    font-size: ${({ theme }) => theme.font.gutter.small}px;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+    margin: 0;
+  }
 `;
