@@ -75,7 +75,6 @@ const StyledFristBurguer = styled.div`
 const StyledSecondBurguer = styled.div`
   background: url(${SecondBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -83,7 +82,6 @@ const StyledSecondBurguer = styled.div`
 const StyledThirdBurguer = styled.div`
   background: url(${ThirdBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -91,7 +89,6 @@ const StyledThirdBurguer = styled.div`
 const StyledFourthBurguer = styled.div`
   background: url(${FourthBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -99,7 +96,6 @@ const StyledFourthBurguer = styled.div`
 const StyledFifthBurguer = styled.div`
   background: url(${FifthBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -107,7 +103,6 @@ const StyledFifthBurguer = styled.div`
 const StyledSixthBurguer = styled.div`
   background: url(${SixthBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -115,7 +110,6 @@ const StyledSixthBurguer = styled.div`
 const StyledSeventhBurguer = styled.div`
   background: url(${SeventhBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -123,7 +117,6 @@ const StyledSeventhBurguer = styled.div`
 const StyledEighthBurguer = styled.div`
   background: url(${EighthBurguer});
   width: 270px;
-  height: 218px;
   background-size: contain;
   background-repeat: no-repeat;
 `;
