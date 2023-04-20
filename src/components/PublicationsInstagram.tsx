@@ -62,55 +62,55 @@ const StyledPublicationsText = styled.div`
 
 const StyledHamburguersContainer = styled.div`
   display: flex;
+  height: 218px;
 `;
 
 const StyledFristBurguer = styled.div`
   background: url(${FristBurguer});
   width: 270px;
-  height: 218px;
-  background: contain;
+  background: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledSecondBurguer = styled.div`
   background: url(${SecondBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledThirdBurguer = styled.div`
   background: url(${ThirdBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledFourthBurguer = styled.div`
   background: url(${FourthBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledFifthBurguer = styled.div`
   background: url(${FifthBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledSixthBurguer = styled.div`
   background: url(${SixthBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const StyledSeventhBurguer = styled.div`
   background: url(${SeventhBurguer});
   width: 270px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
