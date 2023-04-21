@@ -263,3 +263,17 @@ export function ClockIcon(): JSX.Element {
     </svg>
   );
 }
+
+export function IceCreamIcon(): JSX.Element {
+  return (
+    <svg
+      width="60"
+      height="61"
+      viewBox="0 0 60 61"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="30" cy="30.5371" r="30" fill="#FAE2CB" />
+    </svg>
+  );
+}
