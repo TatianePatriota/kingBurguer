@@ -39,7 +39,7 @@ export function PublicationsInstagram(): JSX.Element {
   );
 }
 
-const StyledPublicationsText = styled.div`
+export const StyledPublicationsText = styled.div`
   font-weight: 400;
   text-align: center;
   margin-top: 120px;
