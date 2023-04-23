@@ -1,4 +1,5 @@
 import { HeaderComponent } from "./components/HeaderComponent";
+import { Localization } from "./components/Localization";
 import { Menu } from "./components/Menu";
 import { PersonalizedService } from "./components/PersonalizedService";
 import { PublicationsInstagram } from "./components/PublicationsInstagram";
@@ -12,6 +13,7 @@ function App(): JSX.Element {
       <Menu />
       <PersonalizedService />
       <PublicationsInstagram />
+      <Localization />
     </div>
   );
 }
