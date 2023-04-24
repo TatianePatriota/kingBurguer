@@ -1,23 +1,28 @@
 import styled from "styled-components";
 import { LargeButton } from "./Button";
 import WomanEating from "../assets/images/WomanEating.png";
-import { PropsWithChildren } from "react";
-export function PersonalizedService(): JSX.Element {
+
+export type PersonalizedServiceType = {
+  title: string;
+  description: string;
+  textLink: string;
+};
+
+export function PersonalizedService({
+  title,
+  description,
+  textLink,
+}: PersonalizedServiceType): JSX.Element {
   return (
     <StyledPersonalizedMenu>
       <StyledBackgroundColor>
         <StyledPersonalizedImage></StyledPersonalizedImage>
       </StyledBackgroundColor>
       <StyledMenuText>
-        <h1>
-          Atendimento <span>personalizado</span>
-        </h1>
-        <p>
-          Todos os nossos clientes são tratados como rei e rainha, com a nossa
-          colunaria artesanal.
-        </p>
+        <h1>{title}</h1>
+        <p>{description}</p>
         <LargeButton>
-          <a href="/">Cardápio Imperial</a>
+          <a href="/">{textLink}</a>
         </LargeButton>
       </StyledMenuText>
     </StyledPersonalizedMenu>
