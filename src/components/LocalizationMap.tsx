@@ -1,7 +1,7 @@
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import styled from "styled-components";
 
-export function LocalizationMap() {
+export function LocalizationMap(): JSX.Element {
   const position = { lat: -22.900781, lng: -42.036651 };
 
   const { isLoaded } = useJsApiLoader({
