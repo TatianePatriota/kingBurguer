@@ -11,9 +11,21 @@ function App(): JSX.Element {
       <HeaderComponent />
       <SpecialOffers />
       <Menu />
-      <PersonalizedService />
-      <PublicationsInstagram />
-      <Localization />
+      <PersonalizedService
+        title="Atendimento Personalizado"
+        description="Todos os nossos clientes são tratados como rei e rainha, com a nossa
+          culinária artesanal."
+        textLink="Cardápio Imperial"
+      />
+      <PublicationsInstagram
+        title="Publicações do Instagram"
+        description="Todos os nossos clientes são tratados como rei e rainha, com a nossa
+          colunaria artesanal."
+      />
+      <Localization
+        title="Onde ficar a nosso castelo"
+        description="Estaremos de portas abertas para a nossa realeza."
+      />
     </div>
   );
 }
