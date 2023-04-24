@@ -8,7 +8,12 @@ export function HeaderComponent(): JSX.Element {
     <header>
       <Navigation />
       <BannerHeader>
-        <TextHeader />
+        <TextHeader
+          title="King Burguer"
+          subTitle="Uma nova experiência!"
+          text=" Para quem tem um Apetite de um REI!"
+          textLink="Comprar Agora"
+        />
       </BannerHeader>
       <InformationHeader />
     </header>
