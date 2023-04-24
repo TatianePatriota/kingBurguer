@@ -1,16 +1,22 @@
 import { StyledPublicationsText } from "./PublicationsInstagram";
 import { LocalizationMap } from "./LocalizationMap";
 
-export function Localization(): JSX.Element {
+export type LocalizationType = {
+  title: string;
+  description: string;
+};
+
+export function Localization({
+  title,
+  description,
+}: LocalizationType): JSX.Element {
   return (
     <div>
       <StyledPublicationsText>
-        <h1>Onde ficar a nosso castelo</h1>
-        <p>Estaremos de portas abertas para a nossa realeza.</p>
-      </StyledPublicationsText>
-      <div>
+        <h1>{title}</h1>
+        <p>{description}</p>
         <LocalizationMap />
-      </div>
+      </StyledPublicationsText>
     </div>
   );
 }
