@@ -1,19 +1,26 @@
 import { LargeButton } from "./Button";
 import styled from "styled-components";
 
-export function TextHeader(): JSX.Element {
+export type TextHeaderType = {
+  title: string;
+  text: string;
+  subTitle: string;
+  textLink: string;
+};
+
+export function TextHeader({
+  title,
+  text,
+  subTitle,
+  textLink,
+}: TextHeaderType): JSX.Element {
   return (
     <StyledTextHeader>
-      <h2>Uma nova experiência!</h2>
-      <h1>
-        King
-        <span>burger</span>
-      </h1>
-      <p>
-        Para quem tem um <span> Apetite de um REI!</span>
-      </p>
+      <h2>{subTitle}</h2>
+      <h1>{title}</h1>
+      <p>{text}</p>
       <LargeButton>
-        <a href="/">Comprar Agora</a>
+        <a href="/">{textLink}</a>
       </LargeButton>
     </StyledTextHeader>
   );
