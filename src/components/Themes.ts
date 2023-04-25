@@ -37,5 +37,7 @@ export const theme = {
     lightWhite: "rgba(255, 255, 255, 0.9)",
     lightWhiteSeconday: "rgba(255, 255, 255, 0.69)",
     lightGreySecondary: "rgba(29, 6, 5, 0.15)",
+    boxShadowColor: "rgba(179, 155, 132, 0.5)",
+    borderLight: "rgba(29, 6, 5, 0.4)",
   },
 };
