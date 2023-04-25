@@ -15,6 +15,7 @@ export const theme = {
   fonts: {
     fontLato: "'Lato', sans-serif",
     fontLelita: "'Lilita One', cursive",
+    fontInter: "'Lato', sans-serif",
   },
   colors: {
     brownBackground: "#3B200B",
