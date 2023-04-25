@@ -20,6 +20,7 @@ export const theme = {
     brownBackground: "#3B200B",
     bodyBackground: "#FAF3F2",
     backgroundLight: "#FAE2CB",
+    backgroundRedLight: "rgba(29, 6, 5, 0.2)",
     backgroundImageColor: "rgba(250, 226, 203, 0.9)",
     navBackground: "rgba(59, 32, 11, 0.05);",
     brownDark: "#34201F",
