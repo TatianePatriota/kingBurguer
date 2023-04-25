@@ -8,32 +8,41 @@ import SixthBurguer from "../assets/images/Burguer06.png";
 import SeventhBurguer from "../assets/images/Burguer07.png";
 import EighthBurguer from "../assets/images/Burguer08.png";
 
-export function PublicationsInstagram(): JSX.Element {
+const images = [
+  FristBurguer,
+  SecondBurguer,
+  ThirdBurguer,
+  FourthBurguer,
+  FifthBurguer,
+  SixthBurguer,
+  SeventhBurguer,
+  EighthBurguer,
+];
+
+export type PublicationsType = {
+  title: string;
+  description: string;
+  text: string;
+};
+
+export function PublicationsInstagram({
+  title,
+  description,
+  text,
+}: PublicationsType): JSX.Element {
   return (
     <div>
       <StyledPublicationsText>
-        <h1>Publicações do Instagram</h1>
-        <p>
-          Todos os nossos clientes são tratados como rei e rainha, com a nossa
-          colunaria artesanal.
-        </p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </StyledPublicationsText>
       <StyledHamburguersContainer>
-        <StyledFristBurguer />
-        <StyledSecondBurguer />
-        <StyledThirdBurguer />
-        <StyledFourthBurguer />
-        <StyledFifthBurguer />
-        <StyledSixthBurguer />
-        <StyledSeventhBurguer />
-        <StyledEighthBurguer />
+        {images.map((i, index) => (
+          <StyledImageItem src={i} key={index} />
+        ))}
       </StyledHamburguersContainer>
       <StyledText>
-        <p>
-          • #empireburger • #empireburger • #empireburger • #empireburger •
-          #empireburger • #empireburger • #empireburger • #empireburger •
-          #empire
-        </p>
+        <p>{text}</p>
       </StyledText>
     </div>
   );
@@ -62,63 +71,6 @@ export const StyledPublicationsText = styled.div`
 
 const StyledHamburguersContainer = styled.div`
   display: flex;
-  height: 218px;
-`;
-
-const StyledFristBurguer = styled.div`
-  background: url(${FristBurguer});
-  width: 270px;
-  background: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledSecondBurguer = styled.div`
-  background: url(${SecondBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledThirdBurguer = styled.div`
-  background: url(${ThirdBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledFourthBurguer = styled.div`
-  background: url(${FourthBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledFifthBurguer = styled.div`
-  background: url(${FifthBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledSixthBurguer = styled.div`
-  background: url(${SixthBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledSeventhBurguer = styled.div`
-  background: url(${SeventhBurguer});
-  width: 270px;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const StyledEighthBurguer = styled.div`
-  background: url(${EighthBurguer});
-  width: 270px;
-  background-size: contain;
-  background-repeat: no-repeat;
 `;
 
 const StyledText = styled.div`
@@ -134,4 +86,13 @@ const StyledText = styled.div`
     font-family: ${({ theme }) => theme.fonts.fontLelita};
     margin: 0;
   }
+`;
+
+const StyledImageItem = styled.div<{ src: string }>`
+  background-image: url("${(props) => props.src}");
+  width: 278px;
+  height: 218px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
