@@ -1,4 +1,5 @@
 import { DeliveriesIcon } from "./DeliveriesCard";
+import { HeaderIcon } from "./InformationHeader";
 
 export function IconHeaderLogoEmpire(): JSX.Element {
   return (
@@ -370,6 +371,19 @@ export function DeliveriesIconCard({
       return <IceCreamIcon />;
     case DeliveriesIcon.IFood:
       return <IconIFood />;
+    default:
+      return <></>;
+  }
+}
+
+export function InformationHeaderIcons({ icon }: { icon: HeaderIcon }) {
+  switch (icon) {
+    case HeaderIcon.Burguer:
+      return <BurguerIcon />;
+    case HeaderIcon.Fone:
+      return <FoneIcon />;
+    case HeaderIcon.Delivery:
+      return <DeliveryIcon />;
     default:
       return <></>;
   }
