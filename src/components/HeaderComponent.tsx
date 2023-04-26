@@ -1,9 +1,13 @@
 import { BannerHeader } from "./BannerHeader";
-import { InformationHeader } from "./InformationHeader";
+import { InformationHeader, InformationType } from "./InformationHeader";
 import { Navigation } from "./Navigation";
 import { TextHeader } from "./TextHeader";
 
-export function HeaderComponent(): JSX.Element {
+export type HeaderType = {
+  items: InformationType[];
+};
+
+export function HeaderComponent({ items }: HeaderType): JSX.Element {
   return (
     <header>
       <Navigation />
@@ -15,7 +19,11 @@ export function HeaderComponent(): JSX.Element {
           textLink="Comprar Agora"
         />
       </BannerHeader>
-      <InformationHeader />
+      <div>
+        {items.map((d) => (
+          <InformationHeader informations={d} />
+        ))}
+      </div>
     </header>
   );
 }
