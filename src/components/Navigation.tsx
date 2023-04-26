@@ -1,41 +1,23 @@
 import { Button } from "./Button";
-import {
-  IconHeaderLogoEmpire,
-  IconIFood,
-  Instragram,
-  WhatsApp,
-} from "./CommonIcons";
+import { IconIFood, Instragram, WhatsAppIcon } from "./CommonIcons";
 import styled from "styled-components";
+import { LogoEmpireBuguer } from "./LogoEmpireBurguer";
 
-export function Navigation() {
+const optionsNav = ["Home", "Promoções", "Cardápio", "Comentários", "Contatos"];
+
+export function Navigation(): JSX.Element {
   return (
     <StyledNav>
-      <StyledLogoEmpireBurguer>
-        <IconHeaderLogoEmpire />
-        <h2>
-          <span>Empire</span>burguer
-        </h2>
-      </StyledLogoEmpireBurguer>
-      <div>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-
-          <li>
-            <a href="/">Promoções</a>
-          </li>
-          <li>
-            <a href="/">Cardápio</a>
-          </li>
-          <li>
-            <a href="/">Comentários</a>
-          </li>
-          <li>
-            <a href="/">Contatos</a>
-          </li>
-        </ul>
-      </div>
+      <LogoEmpireBuguer title="Empire burguer" />
+      <StyledOptionsNav>
+        {optionsNav.map((i) => (
+          <ul>
+            <li>
+              <a href="/"> {i}</a>
+            </li>
+          </ul>
+        ))}
+      </StyledOptionsNav>
       <StyledIconNav>
         <div>
           <IconIFood />
@@ -45,58 +27,45 @@ export function Navigation() {
         </div>
       </StyledIconNav>
       <Button>
-        <WhatsApp /> Contato
+        <WhatsAppIcon /> Contato
       </Button>
     </StyledNav>
   );
 }
 
-const StyledNav = styled.nav`
+export const StyledNav = styled.nav`
   display: flex;
   background-color: ${({ theme }) => theme.colors.navBackground};
   align-items: center;
   position: fixed;
   width: 100%;
   justify-content: center;
+`;
+
+export const StyledOptionsNav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-right: 200px;
   ul {
     display: flex;
     justify-content: space-around;
-    padding-right: 200px;
 
     li {
       font-size: ${({ theme }) => theme.font.size.middle}px;
+      line-height: 25px;
+      color: ${({ theme }) => theme.colors.brownLight};
     }
-  }
-
-  ul li:first-child {
-    color: ${({ theme }) => theme.colors.titleBlack};
-    font-weight: bold;
   }
 
   a {
     padding-right: 15px;
     color: ${({ theme }) => theme.colors.titleBlack};
   }
-`;
 
-export const StyledLogoEmpireBurguer = styled.div`
-  display: flex;
-  align-items: baseline;
-  padding-right: 65px;
-
-  h2 {
-    text-transform: uppercase;
-    font-weight: 400;
-    color: ${({ theme }) => theme.colors.titleBrown};
-    font-family: ${({ theme }) => theme.fonts.fontLato};
-    padding-left: 8px;
-  }
-
-  span {
-    padding-right: 4px;
-    font-weight: 900;
-    line-height: 32px;
-  }
+  /* li:first-child a {
+    color: ${({ theme }) => theme.colors.titleBlack};
+    font-weight: bold;
+  } */
 `;
 
 const StyledIconNav = styled.div`
