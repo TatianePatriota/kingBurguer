@@ -26,7 +26,7 @@ export const theme = {
     navBackground: "rgba(59, 32, 11, 0.05);",
     brownDark: "#34201F",
     brownLight: "#635352",
-    yellow: "#F59A1B",
+    yellowDark: "#F59A1B",
     red: "#F43127",
     redDark: "#B50B04",
     white: "#FFFFFF",
