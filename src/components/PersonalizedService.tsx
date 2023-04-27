@@ -33,7 +33,6 @@ const StyledPersonalizedMenu = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 160px 375px 128px 375px;
-
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
 `;
 
