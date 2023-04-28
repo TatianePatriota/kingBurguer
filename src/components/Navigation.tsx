@@ -2,54 +2,56 @@ import { Button } from "./Button";
 import { IconIFood, Instragram, WhatsAppIcon } from "./CommonIcons";
 import styled from "styled-components";
 import { LogoEmpireBuguer } from "./LogoEmpireBurguer";
+import { Container } from "./Container";
 
 const optionsNav = ["Home", "Promoções", "Cardápio", "Comentários", "Contatos"];
 
 export function Navigation(): JSX.Element {
   return (
-    <StyledNav>
-      <LogoEmpireBuguer title="Empire burguer" />
-      <StyledOptionsNav>
-        {optionsNav.map((i) => (
-          <ul>
-            <li>
-              <a href="/"> {i}</a>
-            </li>
-          </ul>
-        ))}
-      </StyledOptionsNav>
-      <StyledIconNav>
-        <div>
-          <IconIFood />
-        </div>
-        <div>
-          <Instragram />
-        </div>
-      </StyledIconNav>
-      <Button>
-        <WhatsAppIcon /> Contato
-      </Button>
-    </StyledNav>
+    <StyledBackground>
+      <StyledNav>
+        <LogoEmpireBuguer title="Empire burguer" />
+        <StyledOptionsNav>
+          {optionsNav.map((i, index) => (
+            <ul key={index}>
+              <li>
+                <a href="/"> {i}</a>
+              </li>
+            </ul>
+          ))}
+        </StyledOptionsNav>
+        <StyledIconNav>
+          <div>
+            <IconIFood />
+          </div>
+          <div>
+            <Instragram />
+          </div>
+        </StyledIconNav>
+        <StyledButton>
+          <WhatsAppIcon /> Contato
+        </StyledButton>
+      </StyledNav>
+    </StyledBackground>
   );
 }
 
-export const StyledNav = styled.nav`
-  display: flex;
+const StyledBackground = styled.section`
   background-color: ${({ theme }) => theme.colors.navBackground};
-  align-items: center;
-  position: fixed;
   width: 100%;
-  justify-content: center;
+  position: fixed;
+`;
+
+export const StyledNav = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledOptionsNav = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 200px;
   ul {
-    display: flex;
-    justify-content: space-around;
-
     li {
       font-size: ${({ theme }) => theme.font.size.middle}px;
       line-height: 25px;
@@ -58,14 +60,13 @@ export const StyledOptionsNav = styled.div`
   }
 
   a {
-    padding-right: 15px;
     color: ${({ theme }) => theme.colors.titleBlack};
   }
 
-  /* li:first-child a {
+  ul:first-child {
     color: ${({ theme }) => theme.colors.titleBlack};
     font-weight: bold;
-  } */
+  }
 `;
 
 const StyledIconNav = styled.div`
@@ -73,4 +74,19 @@ const StyledIconNav = styled.div`
   align-items: center;
   justify-content: space-between;
   border-right: 1px solid ${({ theme }) => theme.colors.redDark};
+
+  a {
+    padding-right: 17px;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  font-size: ${({ theme }) => theme.font.size.small}px;
+  color: ${({ theme }) => theme.colors.brownDark};
+  align-items: center;
+
+  a {
+    padding-right: 15px;
+    text-align: center;
+  }
 `;
