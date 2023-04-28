@@ -63,7 +63,7 @@ const StyledMenuText = styled.div`
     line-height: 46px;
   }
   span {
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${({ theme }) => theme.colors.yellowDark};
   }
   p {
     font-size: ${({ theme }) => theme.font.size.default}px;
