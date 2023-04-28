@@ -1,5 +1,6 @@
 import { LargeButton } from "./Button";
 import styled from "styled-components";
+import { Container } from "./Container";
 
 export type TextHeaderType = {
   title: string;
@@ -26,18 +27,15 @@ export function TextHeader({
   );
 }
 
-const StyledTextHeader = styled.div`
+const StyledTextHeader = styled(Container)`
   color: ${({ theme }) => theme.colors.titleBrown};
-  padding-top: 200px;
-  padding-left: 350px;
+  padding-top: 100px;
 
   h2 {
     font-weight: 700;
     font-family: ${({ theme }) => theme.fonts.fontLato};
     font-size: ${({ theme }) => theme.font.size.default}px;
     line-height: 23px;
-
-    margin: 0;
   }
 
   h1 {
@@ -46,10 +44,9 @@ const StyledTextHeader = styled.div`
     line-height: 85px;
     font-size: ${({ theme }) => theme.font.gutter.big}px;
     text-transform: uppercase;
-    margin: 0;
 
     span {
-      color: ${({ theme }) => theme.colors.yellow};
+      color: ${({ theme }) => theme.colors.yellowDark};
       padding-left: 15px;
     }
   }
@@ -64,7 +61,7 @@ const StyledTextHeader = styled.div`
     span {
       font-weight: 900;
       color: ${({ theme }) => theme.colors.titleLightBrown};
-      background-color: ${({ theme }) => theme.colors.yellow};
+      background-color: ${({ theme }) => theme.colors.yellowDark};
       padding: 2px;
       border-radius: 5px;
     }
