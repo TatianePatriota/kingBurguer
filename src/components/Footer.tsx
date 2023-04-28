@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { LogoEmpireBuguer } from "./LogoEmpireBurguer";
 import { IconIFood, Instragram } from "./CommonIcons";
+import { Container } from "./Container";
 
 export function Footer(): JSX.Element {
   const footerOptions = ["Home", "Localização", "Cardápio", "Sobre"];
@@ -11,8 +12,8 @@ export function Footer(): JSX.Element {
           <LogoEmpireBuguer title="Empire Burguer" />
         </div>
         <StyledOptionsMenu>
-          {footerOptions.map((i) => (
-            <ul>
+          {footerOptions.map((i, index) => (
+            <ul key={index}>
               <li>
                 <a href="/">{i}</a>
               </li>
@@ -33,9 +34,7 @@ export function Footer(): JSX.Element {
   );
 }
 
-const StyledFooter = styled.section`
-  padding: 30px 375px 0 375px;
-`;
+const StyledFooter = styled(Container)``;
 
 const StyledFooterMenu = styled.div`
   display: flex;
