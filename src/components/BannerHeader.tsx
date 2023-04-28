@@ -11,6 +11,5 @@ export const StyledBannerHeader = styled.div`
   height: 545px;
   width: 100%;
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
 `;
