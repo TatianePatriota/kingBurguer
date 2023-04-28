@@ -20,8 +20,8 @@ export function HeaderComponent({ items }: HeaderType): JSX.Element {
         />
       </BannerHeader>
       <div>
-        {items.map((d) => (
-          <InformationHeader informations={d} />
+        {items.map((d, index) => (
+          <InformationHeader key={index} informations={d} />
         ))}
       </div>
     </header>
