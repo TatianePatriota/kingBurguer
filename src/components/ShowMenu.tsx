@@ -40,7 +40,7 @@ export const StyledMenuText = styled.div`
     font-family: ${({ theme }) => theme.fonts.fontLelita};
   }
   span {
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${({ theme }) => theme.colors.yellowDark};
   }
   p {
     font-size: ${({ theme }) => theme.font.size.small}px;
