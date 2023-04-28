@@ -23,7 +23,7 @@ export const theme = {
     backgroundLight: "#FAE2CB",
     backgroundRedLight: "rgba(29, 6, 5, 0.2)",
     backgroundImageColor: "rgba(250, 226, 203, 0.9)",
-    navBackground: "rgba(59, 32, 11, 0.05);",
+    navBackground: "rgba(59, 32, 11, 0.05)",
     brownDark: "#34201F",
     brownLight: "#635352",
     yellowDark: "#F59A1B",
@@ -42,5 +42,6 @@ export const theme = {
     boxShadowColor: "rgba(179, 155, 132, 0.5)",
     borderLight: "rgba(29, 6, 5, 0.4)",
     copyColor: " rgba(2, 14, 31, 0.69)",
+    brownSeconday: "#3A210B",
   },
 };
