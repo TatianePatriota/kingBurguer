@@ -74,7 +74,7 @@ const StyledHamburguersContainer = styled.div`
 `;
 
 const StyledText = styled.div`
-  background-color: ${({ theme }) => theme.colors.yellow};
+  background-color: ${({ theme }) => theme.colors.yellowDark};
   height: 30px;
 
   p {
