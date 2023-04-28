@@ -3,6 +3,7 @@ import PhoneBurguer from "../assets/images/phoneBurguer.png";
 import { DeliveriesCard, DeliveriesCardType } from "./DeliveriesCard";
 import { StyledBackgroundColor } from "./PersonalizedService";
 import { MenuOrders } from "./MenuOrders";
+import { Container } from "./Container";
 
 export type DeliveriesType = {
   items: DeliveriesCardType[];
@@ -10,14 +11,14 @@ export type DeliveriesType = {
 
 export function Deliveries({ items }: DeliveriesType): JSX.Element {
   return (
-    <StyledDeliveries>
+    <Container style={{ paddingTop: 300 }}>
       <StyledDeliveriesOptions>
         <StyledBackgroundColor>
           <StyledPhoneBurguer></StyledPhoneBurguer>
         </StyledBackgroundColor>
         <div>
-          {items.map((d) => (
-            <DeliveriesCard deliveries={d} />
+          {items.map((d, index) => (
+            <DeliveriesCard key={index} deliveries={d} />
           ))}
         </div>
       </StyledDeliveriesOptions>
@@ -28,15 +29,9 @@ export function Deliveries({ items }: DeliveriesType): JSX.Element {
           textLink="Solicitar Pedido"
         />
       </div>
-    </StyledDeliveries>
+    </Container>
   );
 }
-
-const StyledDeliveries = styled.section`
-  padding-left: 375px;
-  padding-top: 300px;
-  padding-right: 375px;
-`;
 
 const StyledPhoneBurguer = styled.div`
   background-image: url(${PhoneBurguer});
