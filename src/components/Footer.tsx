@@ -8,9 +8,7 @@ export function Footer(): JSX.Element {
   return (
     <StyledFooter>
       <StyledFooterMenu>
-        <div>
-          <LogoEmpireBuguer title="Empire Burguer" />
-        </div>
+        <LogoEmpireBuguer title="Empire Burguer" />
         <StyledOptionsMenu>
           {footerOptions.map((i, index) => (
             <ul key={index}>
@@ -20,15 +18,11 @@ export function Footer(): JSX.Element {
             </ul>
           ))}
         </StyledOptionsMenu>
-        <div>
-          <IconIFood />
-          <Instragram />
-        </div>
+        <IconIFood />
+        <Instragram />
       </StyledFooterMenu>
       <StyledCopyright>
-        <p>
-          2022 © EmpireBurger. <span>Todos os direitos reservados.</span>{" "}
-        </p>
+        2022 © EmpireBurger. <span>Todos os direitos reservados.</span>
       </StyledCopyright>
     </StyledFooter>
   );
@@ -36,7 +30,7 @@ export function Footer(): JSX.Element {
 
 const StyledFooter = styled(Container)``;
 
-const StyledFooterMenu = styled.div`
+const StyledFooterMenu = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,6 +49,11 @@ const StyledOptionsMenu = styled.div`
       line-height: 25px;
       color: ${({ theme }) => theme.colors.brownLight};
     }
+
+    :first-child {
+      color: ${({ theme }) => theme.colors.brownSeconday};
+      font-weight: 700;
+    }
   }
 
   a {
@@ -63,15 +62,13 @@ const StyledOptionsMenu = styled.div`
   }
 `;
 
-const StyledCopyright = styled.div`
+const StyledCopyright = styled.p`
   text-align: center;
-  p {
-    font-size: ${({ theme }) => theme.font.size.small - 2}px;
-    line-height: 19px;
-    font-family: ${({ theme }) => theme.fonts.fontInter};
-    color: ${({ theme }) => theme.colors.copyColor};
-    font-weight: 700;
-  }
+  font-size: ${({ theme }) => theme.font.size.small - 2}px;
+  line-height: 19px;
+  font-family: ${({ theme }) => theme.fonts.fontInter};
+  color: ${({ theme }) => theme.colors.copyColor};
+  font-weight: 700;
 
   span {
     font-weight: 400;
