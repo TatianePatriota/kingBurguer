@@ -3,6 +3,7 @@ import Burguer from "../assets/images/Burguer.png";
 import IceCream from "../assets/images/IceCream.png";
 import Potato from "../assets/images/Potato.png";
 import { ClockIcon } from "./CommonIcons";
+import { Container } from "./Container";
 
 export function SpecialOffers(): JSX.Element {
   return (
@@ -57,9 +58,7 @@ export function SpecialOffers(): JSX.Element {
   );
 }
 
-const StyledContainerSpecialOffers = styled.section`
-  padding: 60px 375px;
-`;
+const StyledContainerSpecialOffers = styled(Container)``;
 
 const StyledOffersImages = styled.div`
   display: flex;
