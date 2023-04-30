@@ -23,7 +23,6 @@ export function ShowMenu({ title, text, textLink }: ShowMenuType): JSX.Element {
 }
 export const StyledMenuImage = styled.div`
   background: url(${BuguerMenu});
-  height: 575px;
   background-size: contain;
   background-repeat: no-repeat;
   font-weight: 400;
@@ -31,8 +30,6 @@ export const StyledMenuImage = styled.div`
 `;
 
 export const StyledMenuText = styled.div`
-  padding: 180px 110px 0 375px;
-
   h1 {
     color: ${({ theme }) => theme.colors.brownBackground};
     text-transform: uppercase;
