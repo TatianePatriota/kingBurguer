@@ -32,9 +32,9 @@ const StyledFooter = styled(Container)``;
 
 const StyledFooterMenu = styled(Container)`
   display: flex;
-  align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
+  padding-bottom: 27px;
 `;
 
 const StyledOptionsMenu = styled.div`
@@ -69,6 +69,7 @@ const StyledCopyright = styled.p`
   font-family: ${({ theme }) => theme.fonts.fontInter};
   color: ${({ theme }) => theme.colors.copyColor};
   font-weight: 700;
+  padding-top: 10px;
 
   span {
     font-weight: 400;
