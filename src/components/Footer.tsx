@@ -8,15 +8,15 @@ export function Footer(): JSX.Element {
   return (
     <StyledFooter>
       <StyledFooterMenu>
-        <LogoEmpireBuguer title="Empire Burguer" />
+        <LogoEmpireBuguer iconColor="#F43127" title="Empire Burguer" />
         <StyledOptionsMenu>
-          {footerOptions.map((i, index) => (
-            <ul key={index}>
-              <li>
+          <ul>
+            {footerOptions.map((i, index) => (
+              <li key={index}>
                 <a href="/">{i}</a>
               </li>
-            </ul>
-          ))}
+            ))}
+          </ul>
         </StyledOptionsMenu>
         <IconIFood />
         <Instragram />
@@ -45,12 +45,12 @@ const StyledOptionsMenu = styled.div`
     justify-content: space-around;
 
     li {
-      font-size: ${({ theme }) => theme.font.size.middle}px;
       line-height: 25px;
       color: ${({ theme }) => theme.colors.brownLight};
+      font-size: ${({ theme }) => theme.font.size.middle}px;
     }
 
-    :first-child {
+    li:first-child {
       color: ${({ theme }) => theme.colors.brownSeconday};
       font-weight: 700;
     }
