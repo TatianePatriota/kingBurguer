@@ -22,20 +22,29 @@ export function MenuOrders({
         <h2>{title}</h2>
         <p>{text}</p>
       </StyledMenuOrdersText>
-      <Button>
+      <StyledButton>
         <a href="">{textLink}</a>
-      </Button>
+      </StyledButton>
     </StyledMenuOrders>
   );
 }
 
+const StyledButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.menuColor};
+
+  a {
+    color: ${({ theme }) => theme.colors.red};
+  }
+`;
+
 const StyledMenuOrders = styled.div`
+  background-color: ${({ theme }) => theme.colors.red};
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.red};
   padding: 10px 20px;
   border-radius: 10px;
+  margin-top: 100px;
 `;
 
 const StyledPhoneIcon = styled.div`
@@ -46,6 +55,8 @@ const StyledPhoneIcon = styled.div`
 
 const StyledMenuOrdersText = styled.div`
   font-weight: 400;
+  border-left: 1px solid ${({ theme }) => theme.colors.borderLight};
+  padding-left: 15px;
   h2 {
     color: ${({ theme }) => theme.colors.titleLightBrown};
     text-transform: uppercase;

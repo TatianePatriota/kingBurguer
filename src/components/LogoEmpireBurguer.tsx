@@ -3,12 +3,16 @@ import { IconHeaderLogoEmpire } from "./CommonIcons";
 
 export type NavigationType = {
   title: string;
+  iconColor?: "#1D0605" | "#F43127";
 };
 
-export function LogoEmpireBuguer({ title }: NavigationType): JSX.Element {
+export function LogoEmpireBuguer({
+  title,
+  iconColor = "#1D0605",
+}: NavigationType): JSX.Element {
   return (
     <StyledLogoEmpireBurguer>
-      <IconHeaderLogoEmpire />
+      <IconHeaderLogoEmpire color={iconColor} />
       <h2>{title}</h2>
     </StyledLogoEmpireBurguer>
   );
