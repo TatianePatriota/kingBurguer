@@ -16,7 +16,7 @@ export function LogoEmpireBuguer({ title }: NavigationType): JSX.Element {
 
 export const StyledLogoEmpireBurguer = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: center;
 
   h2 {
     text-transform: uppercase;
