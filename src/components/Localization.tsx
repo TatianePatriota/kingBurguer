@@ -1,5 +1,6 @@
 import { StyledPublicationsText } from "./PublicationsInstagram";
 import { LocalizationMap } from "./LocalizationMap";
+import styled from "styled-components";
 
 export type LocalizationType = {
   title: string;
@@ -11,12 +12,16 @@ export function Localization({
   description,
 }: LocalizationType): JSX.Element {
   return (
-    <div>
+    <StyledLocalization>
       <StyledPublicationsText>
         <h1>{title}</h1>
         <p>{description}</p>
         <LocalizationMap />
       </StyledPublicationsText>
-    </div>
+    </StyledLocalization>
   );
 }
+
+const StyledLocalization = styled.div`
+  padding-bottom: 30px;
+`;
