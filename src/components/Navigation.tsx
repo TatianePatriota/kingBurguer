@@ -11,22 +11,16 @@ export function Navigation(): JSX.Element {
     <StyledBackground>
       <StyledNav>
         <LogoEmpireBuguer title="Empire burguer" />
-        <StyledOptionsNav>
+        <ul>
           {optionsNav.map((i, index) => (
-            <ul key={index}>
-              <li>
-                <a href="/"> {i}</a>
-              </li>
-            </ul>
+            <li key={index}>
+              <a href="/"> {i}</a>
+            </li>
           ))}
-        </StyledOptionsNav>
+        </ul>
         <StyledIconNav>
-          <div>
-            <IconIFood />
-          </div>
-          <div>
-            <Instragram />
-          </div>
+          <IconIFood />
+          <Instragram />
         </StyledIconNav>
         <StyledButton>
           <WhatsAppIcon /> Contato
@@ -39,20 +33,23 @@ export function Navigation(): JSX.Element {
 const StyledBackground = styled.section`
   background-color: ${({ theme }) => theme.colors.navBackground};
   width: 100%;
+  height: 64px;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const StyledNav = styled(Container)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-`;
-
-export const StyledOptionsNav = styled.div`
-  display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   ul {
+    display: flex;
+    margin-bottom: 0;
+
     li {
+      padding-right: 10px;
       font-size: ${({ theme }) => theme.font.size.middle}px;
       line-height: 25px;
       color: ${({ theme }) => theme.colors.brownLight};
@@ -63,7 +60,7 @@ export const StyledOptionsNav = styled.div`
     color: ${({ theme }) => theme.colors.titleBlack};
   }
 
-  ul:first-child {
+  li:first-child {
     color: ${({ theme }) => theme.colors.titleBlack};
     font-weight: bold;
   }
