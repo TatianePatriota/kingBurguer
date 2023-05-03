@@ -6,7 +6,7 @@ import { Container } from "./Container";
 export function Footer(): JSX.Element {
   const footerOptions = ["Home", "Localização", "Cardápio", "Sobre"];
   return (
-    <StyledFooter>
+    <Container>
       <StyledFooterMenu>
         <LogoEmpireBuguer iconColor="#F43127" title="Empire Burguer" />
         <StyledOptionsMenu>
@@ -18,17 +18,17 @@ export function Footer(): JSX.Element {
             ))}
           </ul>
         </StyledOptionsMenu>
-        <IconIFood />
-        <Instragram />
+        <StyledIcons>
+          <IconIFood color="#F59A1B" />
+          <Instragram color="#F59A1B" />
+        </StyledIcons>
       </StyledFooterMenu>
       <StyledCopyright>
         2022 © EmpireBurger. <span>Todos os direitos reservados.</span>
       </StyledCopyright>
-    </StyledFooter>
+    </Container>
   );
 }
-
-const StyledFooter = styled(Container)``;
 
 const StyledFooterMenu = styled(Container)`
   display: flex;
@@ -38,8 +38,6 @@ const StyledFooterMenu = styled(Container)`
 `;
 
 const StyledOptionsMenu = styled.div`
-  display: flex;
-
   ul {
     display: flex;
     justify-content: space-around;
@@ -74,5 +72,11 @@ const StyledCopyright = styled.p`
   span {
     font-weight: 400;
     opacity: 0.6;
+  }
+`;
+
+const StyledIcons = styled.div`
+  svg:first-child {
+    margin-right: 10px;
   }
 `;
