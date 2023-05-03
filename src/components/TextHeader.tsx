@@ -29,7 +29,7 @@ export function TextHeader({
 
 const StyledTextHeader = styled(Container)`
   color: ${({ theme }) => theme.colors.titleBrown};
-  padding-top: 100px;
+  padding-top: 170px;
 
   h2 {
     font-weight: 700;
