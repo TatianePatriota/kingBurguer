@@ -1,4 +1,4 @@
-import { HeaderIcon, InformationType } from "./InformationHeader";
+import { HeaderIcon, InformationType } from "./InformationItem";
 
 export const informations: InformationType[] = [
   {
