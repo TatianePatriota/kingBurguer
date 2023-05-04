@@ -23,7 +23,7 @@ export function ShowMenu({ title, text, textLink }: ShowMenuType): JSX.Element {
 }
 export const StyledMenuImage = styled.div`
   background: url(${BuguerMenu});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   font-weight: 400;
   width: 50%;
