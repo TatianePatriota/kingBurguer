@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { LargeButton } from "./Button";
 import WomanEating from "../assets/images/WomanEating.png";
+import { Container } from "./Container";
 
 export type PersonalizedServiceType = {
   title: string;
@@ -28,11 +29,11 @@ export function PersonalizedService({
     </StyledPersonalizedMenu>
   );
 }
-const StyledPersonalizedMenu = styled.section`
+const StyledPersonalizedMenu = styled(Container)`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 160px 375px 128px 375px;
+  padding-bottom: 128px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
 `;
 
@@ -40,7 +41,7 @@ const StyledPersonalizedImage = styled.div`
   background: url(${WomanEating});
   width: 430px;
   height: 455px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `;
 
@@ -54,7 +55,7 @@ export const StyledBackgroundColor = styled.div`
 `;
 
 const StyledMenuText = styled.div`
-  width: 480px;
+  width: 30%;
   h1 {
     color: ${({ theme }) => theme.colors.brownBackground};
     text-transform: uppercase;
