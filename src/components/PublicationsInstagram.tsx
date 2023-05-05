@@ -51,7 +51,7 @@ export function PublicationsInstagram({
 export const StyledPublicationsText = styled.div`
   font-weight: 400;
   text-align: center;
-  margin-top: 120px;
+  margin-top: 65px;
   h1 {
     color: ${({ theme }) => theme.colors.titleBrown};
     text-transform: uppercase;
