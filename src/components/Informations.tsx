@@ -21,6 +21,7 @@ const StyledInformationHeader = styled(Container)`
   display: flex;
   border-radius: 10px;
   width: 970px;
+  top: -50px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 40px rgba(179, 155, 132, 0.5);
   padding: 15px;
