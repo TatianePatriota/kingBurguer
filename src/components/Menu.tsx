@@ -1,6 +1,10 @@
 import styled from "styled-components";
-import { ShowMenu } from "./ShowMenu";
+import BuguerMenu from "../assets/images/BuguerMenu.png";
+
 import { useEffect, useState } from "react";
+import { Container } from "./Container";
+import { LargeButton } from "./Button";
+import { StyledBackgroundColor } from "./PersonalizedService";
 
 const toMoneyString = (raw: number) =>
   Intl.NumberFormat("pt-BR", {
@@ -10,10 +14,10 @@ const toMoneyString = (raw: number) =>
   }).format(raw);
 
 async function fetchMenu() {
-  return await fetch("/db.json")
+  return await fetch("api/menu.json")
     .then((res) => res.json())
     .then((res) => res.menu)
-    .catch(console.error);
+    .catch((err) => console.log(err));
 }
 type MenuOptionsType = {
   title: string;
@@ -21,49 +25,129 @@ type MenuOptionsType = {
   description: string;
 };
 
-export function Menu() {
+export type ShowMenuType = {
+  title: string;
+  text: string;
+  textLink: string;
+};
+
+export function Menu({ title, text, textLink }: ShowMenuType) {
   const [menu, setMenu] = useState<MenuOptionsType[] | undefined>();
   useEffect(() => {
     fetchMenu().then(setMenu);
   }, []);
 
   return (
-    <StyledContainerMenu>
-      <ShowMenu
-        title="Escolha o seu combo imperial, peça agora!"
-        text="Temos vários tipos de pratos para a nossa realeza, fique esperto
-        porque temos sempre promoção!"
-        textLink="Ver Cardápio Completo"
-      />
-      <StyledMenuPrices>
-        <h2>Cardápio imperial | Burger</h2>
-        {menu?.map((item, index) => (
-          <div key={index}>
-            <h3>
-              {item.title}
-              <span>{toMoneyString(item.price)}</span>
-            </h3>
-            <p>{item.description}</p>
+    <StyledMenuContainer>
+      <div className="full" style={{ position: "absolute" }}>
+        <StyledMenuImage />
+        <StyledBackgroundBrown />
+      </div>
+      <Container>
+        <div className="row">
+          <div className="col">
+            <StyledMenuText>
+              <h1>{title}</h1>
+              <p>{text}</p>
+              <LargeButton>
+                <a href="/">{textLink}</a>
+              </LargeButton>
+            </StyledMenuText>
           </div>
-        ))}
-      </StyledMenuPrices>
-    </StyledContainerMenu>
+          <StyledMenuPrices className="col">
+            <h2>Cardápio imperial | Burger</h2>
+            {menu?.map((item, index) => (
+              <div key={index}>
+                <h3>
+                  {item.title}
+
+                  <span>{toMoneyString(item.price)}</span>
+                </h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </StyledMenuPrices>
+        </div>
+      </Container>
+    </StyledMenuContainer>
   );
 }
 
-const StyledMenuPrices = styled.div`
+const StyledMenuContainer = styled.div`
+  margin-bottom: 300px;
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+
+  & > .full {
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+
+    display: flex;
+
+    & > div {
+      flex: 1;
+    }
+  }
+  & .row {
+    display: flex;
+    flex-direction: row;
+  }
+  & .col {
+    flex: 1;
+  }
+`;
+export const StyledMenuImage = styled.div`
+  background: url(${BuguerMenu});
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-weight: 400;
+  width: 100%;
+`;
+
+export const StyledMenuText = styled.div`
+  margin-top: 180px;
+
+  h1 {
+    color: ${({ theme }) => theme.colors.brownBackground};
+    text-transform: uppercase;
+    font-size: ${({ theme }) => theme.font.gutter.large}px;
+    font-family: ${({ theme }) => theme.fonts.fontLelita};
+  }
+  span {
+    background-color: ${({ theme }) => theme.colors.yellowDark};
+  }
+  p {
+    font-size: ${({ theme }) => theme.font.size.small}px;
+    font-family: ${({ theme }) => theme.fonts.fontLato};
+    color: ${({ theme }) => theme.colors.titleLightBrown};
+  }
+
+  a {
+    font-weight: 700;
+    font-size: ${({ theme }) => theme.font.size.small}px;
+  }
+`;
+
+const StyledBackgroundBrown = styled.div`
   background-color: ${({ theme }) => theme.colors.brownBackground};
   color: ${({ theme }) => theme.colors.menuColor};
   width: 50%;
+`;
 
+const StyledMenuPrices = styled.div`
+  margin-left: 30px;
+  margin-top: 70px;
   h2 {
-    color: ${({ theme }) => theme.colors.backgroundYellow};
+    color: ${({ theme }) => theme.colors.yellowDark};
     text-transform: uppercase;
     font-size: ${({ theme }) => theme.font.gutter.default}px;
     font-family: ${({ theme }) => theme.fonts.fontLelita};
     line-height: 35px;
     margin-bottom: 15px;
   }
+
   h3 {
     color: ${({ theme }) => theme.colors.menuColor};
     text-transform: uppercase;
@@ -71,6 +155,21 @@ const StyledMenuPrices = styled.div`
     font-family: ${({ theme }) => theme.fonts.fontLelita};
     line-height: 22px;
     padding-bottom: 4px;
+    display: flex;
+  }
+  & span {
+    flex: 1;
+    display: flex;
+    &::before {
+      content: "";
+      margin-left: 10px;
+      position: relative;
+      top: -5px;
+      margin-right: 5px;
+      display: inline-flex;
+      flex: 1;
+      border-bottom: 3px dashed ${({ theme }) => theme.colors.menuColor};
+    }
   }
 
   p {
@@ -80,11 +179,6 @@ const StyledMenuPrices = styled.div`
     font-weight: 400;
     font-size: ${({ theme }) => theme.font.size.small}px;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
-`;
-
-const StyledContainerMenu = styled.section`
-  display: flex;
-  justify-content: space-between;
 `;
