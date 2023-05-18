@@ -1,33 +1,71 @@
-import { HeaderComponent } from "./components/HeaderComponent";
+import { BannerHeader } from "./components/BannerHeader";
+import { CarouselComments } from "./components/Carousel";
+import { Deliveries } from "./components/Deliveries";
+import { deliveriesOptions } from "./components/Deliveries-services";
+import { Footer } from "./components/Footer";
+import { informations } from "./components/HeaderInformation";
 import { Localization } from "./components/Localization";
 import { Menu } from "./components/Menu";
 import { PersonalizedService } from "./components/PersonalizedService";
 import { PublicationsInstagram } from "./components/PublicationsInstagram";
 import { SpecialOffers } from "./components/SpecialOffers";
+import { TextHeader } from "./components/TextHeader";
+import { InformationsList } from "./components/Informations";
+import { Navigation } from "./components/Navigation";
+import styled from "styled-components";
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <HeaderComponent />
+    <StyledApp className="App">
+      <Navigation />
+      <BannerHeader>
+        <TextHeader
+          title="King Burguer"
+          subTitle="Uma nova experiência!"
+          text=" Para quem tem um Apetite de um REI!"
+          textLink="Comprar Agora"
+        />
+      </BannerHeader>
+      <InformationsList items={informations} />
       <SpecialOffers />
-      <Menu />
+      <Menu
+        title="Escolha o seu combo imperial, peça agora!"
+        text="Temos vários tipos de pratos para a nossa realeza, fique esperto
+        porque temos sempre promoção!"
+        textLink="Ver Cardápio Completo"
+      />
       <PersonalizedService
         title="Atendimento Personalizado"
         description="Todos os nossos clientes são tratados como rei e rainha, com a nossa
-          culinária artesanal."
+        culinária artesanal."
         textLink="Cardápio Imperial"
       />
+      <CarouselComments />
       <PublicationsInstagram
         title="Publicações do Instagram"
         description="Todos os nossos clientes são tratados como rei e rainha, com a nossa
           colunaria artesanal."
+        text="• #empireburger • #empireburger • #empireburger • #empireburger •
+          #empireburger • #empireburger • #empireburger "
       />
+      <Deliveries items={deliveriesOptions} />
       <Localization
         title="Onde ficar a nosso castelo"
         description="Estaremos de portas abertas para a nossa realeza."
       />
-    </div>
+      <Footer />
+    </StyledApp>
   );
 }
 
 export default App;
+
+const StyledApp = styled.div`
+  .app {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 428px) {
+    overflow-x: hidden;
+  }
+`;
