@@ -4,7 +4,6 @@ import BuguerMenu from "../assets/images/BuguerMenu.png";
 import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { LargeButton } from "./Button";
-import { StyledBackgroundColor } from "./PersonalizedService";
 
 const toMoneyString = (raw: number) =>
   Intl.NumberFormat("pt-BR", {
@@ -13,16 +12,10 @@ const toMoneyString = (raw: number) =>
     style: "currency",
   }).format(raw);
 
-async function fetchMenu() {
-  return await fetch("api/menu.json")
-    .then((res) => res.json())
-    .then((res) => res.menu)
-    .catch((err) => console.log(err));
-}
 type MenuOptionsType = {
-  title: string;
+  plate: string;
   price: number;
-  description: string;
+  ingredients: string;
 };
 
 export type ShowMenuType = {
@@ -34,8 +27,22 @@ export type ShowMenuType = {
 export function Menu({ title, text, textLink }: ShowMenuType) {
   const [menu, setMenu] = useState<MenuOptionsType[] | undefined>();
   useEffect(() => {
-    fetchMenu().then(setMenu);
+    async function fetchMenu() {
+      const resMenu = await fetch(
+        "https://api.brchallenges.com/api/empire-burger/menu"
+      )
+        .then((res) => res.json())
+        .then((data) => setMenu(data))
+        .catch((e) => console.log(e));
+      console.log(resMenu);
+    }
+
+    fetchMenu();
   }, []);
+
+  // useEffect(() => {
+  //   fetchMenu().then(setMenu);
+  // }, []);
 
   return (
     <StyledMenuContainer>
@@ -59,11 +66,11 @@ export function Menu({ title, text, textLink }: ShowMenuType) {
             {menu?.map((item, index) => (
               <div key={index}>
                 <h3>
-                  {item.title}
+                  {item.plate}
 
                   <span>{toMoneyString(item.price)}</span>
                 </h3>
-                <p>{item.description}</p>
+                <p>{item.ingredients}</p>
               </div>
             ))}
           </StyledMenuPrices>
@@ -77,7 +84,6 @@ const StyledMenuContainer = styled.div`
   margin-bottom: 300px;
   position: relative;
   width: 100%;
-  /* height: 100%; */
 
   & > .full {
     height: 100%;
@@ -89,10 +95,19 @@ const StyledMenuContainer = styled.div`
     & > div {
       flex: 1;
     }
+
+    @media (max-width: 428px) {
+      flex-direction: column;
+    }
   }
+
   & .row {
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 428px) {
+      flex-direction: column;
+    }
   }
   & .col {
     flex: 1;
@@ -102,8 +117,12 @@ export const StyledMenuImage = styled.div`
   background: url(${BuguerMenu});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right;
   font-weight: 400;
   width: 100%;
+  @media (max-width: 428px) {
+    height: 100px;
+  }
 `;
 
 export const StyledMenuText = styled.div`
@@ -128,12 +147,21 @@ export const StyledMenuText = styled.div`
     font-weight: 700;
     font-size: ${({ theme }) => theme.font.size.small}px;
   }
+
+  @media (max-width: 428px) {
+    h1 {
+      font-size: ${({ theme }) => theme.font.gutter.small}px;
+    }
+  }
 `;
 
 const StyledBackgroundBrown = styled.div`
   background-color: ${({ theme }) => theme.colors.brownBackground};
   color: ${({ theme }) => theme.colors.menuColor};
   width: 50%;
+  @media (max-width: 428px) {
+    width: 100%;
+  }
 `;
 
 const StyledMenuPrices = styled.div`
