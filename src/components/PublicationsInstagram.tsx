@@ -71,11 +71,37 @@ export const StyledPublicationsText = styled.div`
 
 const StyledHamburguersContainer = styled.div`
   display: flex;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    background: linear-gradient(
+      270.22deg,
+      #21201b 7.41%,
+      rgba(33, 32, 27, 0) 91.38%
+    );
+    width: 410px;
+    position: absolute;
+    z-index: 100;
+    height: 100%;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  &::before {
+    transform: rotate(-180deg);
+  }
 `;
 
 const StyledText = styled.div`
   background-color: ${({ theme }) => theme.colors.yellowDark};
   height: 30px;
+  @media (max-width: 428px) {
+    display: none;
+  }
 
   p {
     color: ${({ theme }) => theme.colors.titleBrown};
