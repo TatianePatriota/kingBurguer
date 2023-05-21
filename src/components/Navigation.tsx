@@ -19,8 +19,8 @@ export function Navigation(): JSX.Element {
           ))}
         </ul>
         <StyledIconNav>
-          <IconIFood />
-          <Instragram />
+          <IconIFood color="#FFFFFF" />
+          <Instragram color="#FFFFFF" />
         </StyledIconNav>
         <StyledButton>
           <WhatsAppIcon /> Contato
