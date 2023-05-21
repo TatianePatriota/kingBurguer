@@ -7,34 +7,50 @@ import { StyledPublicationsText } from "./PublicationsInstagram";
 import { Container } from "./Container";
 
 type CarouselType = {
-  comment: string;
-  author: string;
+  testimonial: string;
+  name: string;
   age: number;
-  occupation: string;
+  image: string;
 };
 
-async function fetchCarousel() {
-  return await fetch("api/comments.json")
-    .then((res) => res.json())
-    .then((res) => res.comments)
-    .catch((err) => console.log(err));
-}
-
 export function CarouselComments() {
+  useEffect(() => {
+    async function fetchCarousel() {
+      const resCarousel = await fetch(
+        "https://api.brchallenges.com/api/empire-burger/testimonials"
+      )
+        .then((res) => res.json())
+        .then((data) => setComments(data))
+        .catch((e) => console.log(e));
+      console.log(resCarousel);
+    }
+
+    fetchCarousel();
+  }, []);
   const [comments, setComments] = useState<CarouselType[]>();
 
   const settings = {
     // focusOnSelect: false,
     infinite: false,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     dots: true,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
-
-  useEffect(() => {
-    fetchCarousel().then(setComments);
-  }, []);
 
   return (
     <StyledContainer>
@@ -47,15 +63,18 @@ export function CarouselComments() {
         {comments?.map((item, id) => (
           <StyledCarouselItem key={id}>
             <div>
-              <p>"{item.comment}"</p>
+              <p>"{item.testimonial}"</p>
               <StyledOcupation>
-                <img src={Avatar} alt={item.author} />
+                <div
+                  style={{ backgroundImage: `url(${item.image})` }}
+                  className="avatar_carousel"
+                />
                 <StyledOcupationContent>
-                  <h3>{item.author}</h3>
+                  <h3>{item.name}</h3>
                   <p>
                     {" "}
                     <span>{item.age} Anos</span>
-                    <span>{item.occupation}</span>
+                    <span>Design</span>
                   </p>
                 </StyledOcupationContent>
               </StyledOcupation>
@@ -74,6 +93,7 @@ const StyledCarousel = styled(StyledPublicationsText)`
 const StyledContainer = styled(Container)`
   & .slick-track {
     display: flex;
+    justify-content: space-between;
   }
 
   & .slick-list {
@@ -81,7 +101,16 @@ const StyledContainer = styled(Container)`
   }
 
   & .slick-slide {
-    margin-right: 26px;
+    margin-right: 22px;
+
+    /* box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1); */
+    /* background-color: blue; */
+  }
+
+  & .slick-current {
+    & :first-child {
+      background-color: red;
+    }
   }
 
   & .slick-dots {
@@ -89,7 +118,7 @@ const StyledContainer = styled(Container)`
     margin: 0;
     padding: 0;
     justify-content: space-around;
-    width: 20%;
+    width: 15%;
     margin: auto;
     flex-direction: row;
   }
@@ -110,13 +139,21 @@ const StyledContainer = styled(Container)`
 const StyledCarouselItem = styled.div`
   box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1);
   border-radius: 10px;
-  padding-top: 12px;
+  justify-content: center;
+  display: flex !important;
+
+  align-items: center;
+  height: 170px;
+
+  /* padding-top: 12px;
   padding-bottom: 16px;
+  padding-right: 10px; */
   padding-left: 16px;
   p {
     font-weight: 400;
     text-align: start;
     margin: 0;
+
     color: ${({ theme }) => theme.colors.brownLight};
     font-family: ${({ theme }) => theme.fonts.fontLato};
     line-height: 22px;
@@ -131,6 +168,16 @@ const StyledOcupationContent = styled.div`
 const StyledOcupation = styled.div`
   justify-content: flex-start;
   display: flex;
+  margin-top: 14px;
+
+  & .avatar_carousel {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   h3 {
     color: ${({ theme }) => theme.colors.titleBrown};
