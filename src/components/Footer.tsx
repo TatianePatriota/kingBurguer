@@ -35,12 +35,24 @@ const StyledFooterMenu = styled(Container)`
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
   padding-bottom: 27px;
+
+  @media (max-width: 428px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 const StyledOptionsMenu = styled.div`
   ul {
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 428px) {
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid red;
+    }
 
     li {
       line-height: 25px;
