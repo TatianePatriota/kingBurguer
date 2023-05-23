@@ -3,6 +3,7 @@ import { HeaderIcon } from "./InformationItem";
 
 export type IconsType = {
   title: string;
+  titleColor?: "rgba(29, 6, 5, 0.9)" | "#F59A1B";
   iconColor?: "#1D0605" | "#F43127" | "#FFFFFF" | "#F59A1B" | "#60340B";
 };
 
