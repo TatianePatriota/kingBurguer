@@ -43,4 +43,8 @@ const StyledDeliveriesOptions = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   display: flex;
+
+  @media (max-width: 428px) {
+    flex-direction: column;
+  }
 `;
