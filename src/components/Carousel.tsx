@@ -132,7 +132,7 @@ const StyledContainer = styled(Container)`
     border: none;
     height: 3px;
     width: 47px;
-    color: transparent;
+    font-size: 0;
   }
 `;
 
