@@ -63,6 +63,9 @@ const StyledContainerSpecialOffers = styled(Container)``;
 const StyledOffersImages = styled.div`
   display: flex;
   justify-content: center;
+  @media (max-width: 428px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledOffersText = styled.div`
@@ -95,6 +98,11 @@ const StyledBurguerSpecialOffers = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   font-weight: 400;
+
+  @media (max-width: 428px) {
+    height: 200px;
+    width: 370px;
+  }
 `;
 
 const StyledBurguerTitle = styled.div`
@@ -179,6 +187,14 @@ const StyledOpeningHours = styled.div`
   svg {
     padding-right: 20px;
   }
+
+  @media (max-width: 428px) {
+    padding: 10px;
+    p {
+      font-family: ${({ theme }) => theme.fonts.fontLato};
+      margin: 0;
+    }
+  }
 `;
 
 const StyledTextInformations = styled.div`
@@ -189,6 +205,11 @@ const StyledTextInformations = styled.div`
 const StyledContainerHours = styled.div`
   display: flex;
   align-items: center;
+  padding-bottom: 64px;
+
+  @media (max-width: 428px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledInstagramContent = styled.div`
@@ -208,5 +229,11 @@ const StyledInstagramContent = styled.div`
     text-transform: uppercase;
     line-height: 28px;
     font-size: ${({ theme }) => theme.font.gutter.small}px;
+  }
+
+  @media (max-width: 428px) {
+    a {
+      font-size: ${({ theme }) => theme.font.gutter.large}px;
+    }
   }
 `;
