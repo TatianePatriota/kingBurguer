@@ -35,6 +35,13 @@ const StyledButton = styled(Button)`
   a {
     color: ${({ theme }) => theme.colors.red};
   }
+
+  @media (max-width: 428px) {
+    width: 100%;
+    a {
+      text-align: center;
+    }
+  }
 `;
 
 const StyledMenuOrders = styled.div`
@@ -45,6 +52,11 @@ const StyledMenuOrders = styled.div`
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 100px;
+
+  @media (max-width: 428px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const StyledPhoneIcon = styled.div`
@@ -57,6 +69,7 @@ const StyledMenuOrdersText = styled.div`
   font-weight: 400;
   border-left: 1px solid ${({ theme }) => theme.colors.borderLight};
   padding-left: 15px;
+
   h2 {
     color: ${({ theme }) => theme.colors.titleLightBrown};
     text-transform: uppercase;
@@ -70,5 +83,19 @@ const StyledMenuOrdersText = styled.div`
     font-size: ${({ theme }) => theme.font.size.small}px;
     font-family: ${({ theme }) => theme.fonts.fontLato};
     margin: 0;
+  }
+
+  @media (max-width: 428px) {
+    border-top: 1px solid ${({ theme }) => theme.colors.borderLight};
+    border-left: none;
+    margin-top: 10px;
+
+    h2 {
+      margin-top: 10px;
+      font-size: ${({ theme }) => theme.font.size.default}px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
   }
 `;
