@@ -8,7 +8,7 @@ export function Footer(): JSX.Element {
   return (
     <Container>
       <StyledFooterMenu>
-        <LogoEmpireBuguer iconColor="#F43127" title="Empire Burguer" />
+        <LogoEmpireBuguer iconColor="#F43127" variant="secondary" />
         <StyledOptionsMenu>
           <ul>
             {footerOptions.map((i, index) => (
