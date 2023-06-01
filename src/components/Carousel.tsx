@@ -1,4 +1,3 @@
-import Avatar from "../assets/images/Avatar.png";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
@@ -30,12 +29,13 @@ export function CarouselComments() {
   const [comments, setComments] = useState<CarouselType[]>();
 
   const settings = {
-    // focusOnSelect: false,
+    focusOnSelect: false,
     infinite: false,
+    slidesToScroll: 4,
     slidesToShow: 3,
-    slidesToScroll: 5,
     dots: true,
     arrows: false,
+
     responsive: [
       {
         breakpoint: 1300,
@@ -54,34 +54,36 @@ export function CarouselComments() {
 
   return (
     <StyledContainer>
-      <StyledCarousel>
-        <h1>Nossa realeza</h1>
-        <p>A satisfação de nossos clientes em primeiro lugar!</p>
-      </StyledCarousel>
+      <Container>
+        <StyledCarousel>
+          <h1>Nossa realeza</h1>
+          <p>A satisfação de nossos clientes em primeiro lugar!</p>
+        </StyledCarousel>
 
-      <Slider {...settings}>
-        {comments?.map((item, id) => (
-          <StyledCarouselItem key={id}>
-            <div>
-              <p>"{item.testimonial}"</p>
-              <StyledOcupation>
-                <div
-                  style={{ backgroundImage: `url(${item.image})` }}
-                  className="avatar_carousel"
-                />
-                <StyledOcupationContent>
-                  <h3>{item.name}</h3>
-                  <p>
-                    {" "}
-                    <span>{item.age} Anos</span>
-                    <span>Design</span>
-                  </p>
-                </StyledOcupationContent>
-              </StyledOcupation>
-            </div>
-          </StyledCarouselItem>
-        ))}
-      </Slider>
+        <Slider {...settings}>
+          {comments?.map((item, id) => (
+            <StyledCarouselItem className="carousel-item" key={id}>
+              <div>
+                <p>"{item.testimonial}"</p>
+                <StyledOcupation>
+                  <div
+                    style={{ backgroundImage: `url(${item.image})` }}
+                    className="avatar_carousel"
+                  />
+                  <StyledOcupationContent>
+                    <h3>{item.name}</h3>
+                    <p>
+                      {" "}
+                      <span>{item.age} Anos</span>
+                      <span>Design</span>
+                    </p>
+                  </StyledOcupationContent>
+                </StyledOcupation>
+              </div>
+            </StyledCarouselItem>
+          ))}
+        </Slider>
+      </Container>
     </StyledContainer>
   );
 }
@@ -90,10 +92,11 @@ const StyledCarousel = styled(StyledPublicationsText)`
   text-align: start;
 `;
 
-const StyledContainer = styled(Container)`
+const StyledContainer = styled.div`
   & .slick-track {
     display: flex;
     justify-content: space-between;
+    /* width: 100% !important; */
   }
 
   & .slick-list {
@@ -103,13 +106,13 @@ const StyledContainer = styled(Container)`
   & .slick-slide {
     margin-right: 22px;
 
-    /* box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1); */
-    /* background-color: blue; */
-  }
+    & .carousel-item {
+      opacity: 0.6;
+      padding: 5px;
+    }
 
-  & .slick-current {
-    & :first-child {
-      background-color: red;
+    &.slick-current .carousel-item {
+      opacity: 1;
     }
   }
 
@@ -121,6 +124,10 @@ const StyledContainer = styled(Container)`
     width: 15%;
     margin: auto;
     flex-direction: row;
+
+    & button {
+      cursor: pointer;
+    }
   }
 
   & .slick-dots li.slick-active button {
@@ -140,15 +147,12 @@ const StyledCarouselItem = styled.div`
   box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1);
   border-radius: 10px;
   justify-content: center;
-  display: flex !important;
+  box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1);
 
+  display: flex !important;
   align-items: center;
   height: 170px;
 
-  /* padding-top: 12px;
-  padding-bottom: 16px;
-  padding-right: 10px; */
-  padding-left: 16px;
   p {
     font-weight: 400;
     text-align: start;
