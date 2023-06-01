@@ -1,38 +1,45 @@
-import styled from "styled-components";
 import { IconHeaderLogoEmpire } from "./CommonIcons";
+import styled from "styled-components";
 
 export type NavigationType = {
-  title: string;
+  variant?: "primary" | "secondary";
   iconColor?: "#1D0605" | "#F43127";
 };
 
 export function LogoEmpireBuguer({
-  title,
+  variant,
   iconColor = "#1D0605",
 }: NavigationType): JSX.Element {
   return (
     <StyledLogoEmpireBurguer>
       <IconHeaderLogoEmpire color={iconColor} />
-      <h2>{title}</h2>
+      <StyledTitle variant={variant}>
+        <span>Empire</span> Burguer
+      </StyledTitle>
     </StyledLogoEmpireBurguer>
   );
 }
 
-export const StyledLogoEmpireBurguer = styled.div`
-  display: flex;
-  align-items: center;
-
-  h2 {
-    text-transform: uppercase;
-    font-weight: 400;
-    color: ${({ theme }) => theme.colors.titleBrown};
-    font-family: ${({ theme }) => theme.fonts.fontLato};
-    padding-left: 8px;
-  }
+export const StyledTitle = styled.h2<{
+  variant?: "primary" | "secondary";
+}>`
+  color: ${({ variant, theme }) =>
+    variant === "secondary"
+      ? theme.colors.yellowDark
+      : theme.colors.titleBrown};
+  text-transform: uppercase;
+  font-weight: 400;
+  /* color: ${({ theme }) => theme.colors.titleBrown}; */
+  font-family: ${({ theme }) => theme.fonts.fontLato};
+  padding-left: 8px;
 
   span {
-    padding-right: 4px;
     font-weight: 900;
     line-height: 32px;
   }
+`;
+
+export const StyledLogoEmpireBurguer = styled.div`
+  display: flex;
+  align-items: center;
 `;
