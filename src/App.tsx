@@ -16,7 +16,7 @@ import styled from "styled-components";
 
 function App(): JSX.Element {
   return (
-    <StyledApp className="App">
+    <StyledApp>
       <Navigation />
       <BannerHeader>
         <TextHeader
@@ -61,11 +61,5 @@ function App(): JSX.Element {
 export default App;
 
 const StyledApp = styled.div`
-  .app {
-    overflow-x: hidden;
-  }
-
-  @media (max-width: 428px) {
-    overflow-x: hidden;
-  }
+  overflow-x: hidden;
 `;
