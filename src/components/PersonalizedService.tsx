@@ -4,7 +4,7 @@ import WomanEating from "../assets/images/WomanEating.png";
 import { Container } from "./Container";
 
 export type PersonalizedServiceType = {
-  title: string;
+  title: React.ReactNode;
   description: string;
   textLink: string;
 };
@@ -35,6 +35,14 @@ const StyledPersonalizedMenu = styled(Container)`
   align-items: center;
   padding-bottom: 128px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
+
+  @media (max-width: 428px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledPersonalizedImage = styled.div`
@@ -52,6 +60,15 @@ export const StyledBackgroundColor = styled.div`
   border-radius: 35px 154px 154px 35px;
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 428px) {
+    margin-bottom: 100px;
+    width: 380px;
+    height: 205px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
 `;
 
 const StyledMenuText = styled.div`
@@ -65,6 +82,7 @@ const StyledMenuText = styled.div`
   }
   span {
     background-color: ${({ theme }) => theme.colors.yellowDark};
+    border-radius: 8px;
   }
   p {
     font-size: ${({ theme }) => theme.font.size.default}px;
@@ -77,5 +95,18 @@ const StyledMenuText = styled.div`
     font-size: ${({ theme }) => theme.font.size.small}px;
     color: ${({ theme }) => theme.colors.white};
     font-size: ${({ theme }) => theme.font.size.default + 2}px;
+  }
+
+  @media (max-width: 428px) {
+    width: 100%;
+    text-align: start;
+
+    h1 {
+      font-size: ${({ theme }) => theme.font.gutter.small}px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 30px;
   }
 `;

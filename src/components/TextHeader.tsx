@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Container } from "./Container";
 
 export type TextHeaderType = {
-  title: string;
-  text: string;
+  title: React.ReactNode;
+  text: React.ReactNode;
   subTitle: string;
   textLink: string;
 };
@@ -47,7 +47,6 @@ const StyledTextHeader = styled(Container)`
 
     span {
       color: ${({ theme }) => theme.colors.yellowDark};
-      padding-left: 15px;
     }
   }
 

@@ -19,7 +19,7 @@ type MenuOptionsType = {
 };
 
 export type ShowMenuType = {
-  title: string;
+  title: React.ReactNode;
   text: string;
   textLink: string;
 };
@@ -39,10 +39,6 @@ export function Menu({ title, text, textLink }: ShowMenuType) {
 
     fetchMenu();
   }, []);
-
-  // useEffect(() => {
-  //   fetchMenu().then(setMenu);
-  // }, []);
 
   return (
     <StyledMenuContainer>
@@ -99,6 +95,10 @@ const StyledMenuContainer = styled.div`
     @media (max-width: 428px) {
       flex-direction: column;
     }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   & .row {
@@ -106,6 +106,10 @@ const StyledMenuContainer = styled.div`
     flex-direction: row;
 
     @media (max-width: 428px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
       flex-direction: column;
     }
   }
@@ -120,6 +124,7 @@ export const StyledMenuImage = styled.div`
   background-position: right;
   font-weight: 400;
   width: 100%;
+
   @media (max-width: 428px) {
     height: 100px;
   }
@@ -135,7 +140,9 @@ export const StyledMenuText = styled.div`
     font-family: ${({ theme }) => theme.fonts.fontLelita};
   }
   span {
+    border-radius: 8px;
     background-color: ${({ theme }) => theme.colors.yellowDark};
+    padding: 3px;
   }
   p {
     font-size: ${({ theme }) => theme.font.size.small}px;
@@ -153,6 +160,11 @@ export const StyledMenuText = styled.div`
       font-size: ${({ theme }) => theme.font.gutter.small}px;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 390px;
+    margin: 0 auto;
+  }
 `;
 
 const StyledBackgroundBrown = styled.div`
@@ -161,6 +173,11 @@ const StyledBackgroundBrown = styled.div`
   width: 50%;
   @media (max-width: 428px) {
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
   }
 `;
 
@@ -208,5 +225,16 @@ const StyledMenuPrices = styled.div`
     font-size: ${({ theme }) => theme.font.size.small}px;
     margin: 0;
     margin-bottom: 32px;
+  }
+
+  @media (max-width: 428px) {
+    margin-left: 0;
+    margin-top: 170px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 250px;
+    padding-right: 42px;
   }
 `;
