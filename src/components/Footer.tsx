@@ -5,6 +5,7 @@ import { Container } from "./Container";
 
 export function Footer(): JSX.Element {
   const footerOptions = ["Home", "Localização", "Cardápio", "Sobre"];
+
   return (
     <Container>
       <StyledFooterMenu>
@@ -30,7 +31,7 @@ export function Footer(): JSX.Element {
   );
 }
 
-const StyledFooterMenu = styled(Container)`
+export const StyledFooterMenu = styled(Container)`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
@@ -43,7 +44,7 @@ const StyledFooterMenu = styled(Container)`
   }
 `;
 
-const StyledOptionsMenu = styled.div`
+export const StyledOptionsMenu = styled.div`
   ul {
     display: flex;
     justify-content: space-around;
@@ -72,7 +73,7 @@ const StyledOptionsMenu = styled.div`
   }
 `;
 
-const StyledCopyright = styled.p`
+export const StyledCopyright = styled.p`
   text-align: center;
   font-size: ${({ theme }) => theme.font.size.small - 2}px;
   line-height: 19px;
@@ -87,7 +88,7 @@ const StyledCopyright = styled.p`
   }
 `;
 
-const StyledIcons = styled.div`
+export const StyledIcons = styled.div`
   svg:first-child {
     margin-right: 10px;
   }

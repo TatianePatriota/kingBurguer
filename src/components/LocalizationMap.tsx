@@ -33,7 +33,7 @@ export function LocalizationMap(): JSX.Element {
   );
 }
 
-const StyledLocalizationMap = styled.div`
+export const StyledLocalizationMap = styled.div`
   height: 200px;
   margin-top: 32px;
 `;

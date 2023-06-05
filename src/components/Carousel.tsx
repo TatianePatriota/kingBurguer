@@ -13,6 +13,8 @@ type CarouselType = {
 };
 
 export function CarouselComments() {
+  const [comments, setComments] = useState<CarouselType[]>();
+
   useEffect(() => {
     async function fetchCarousel() {
       const resCarousel = await fetch(
@@ -26,7 +28,6 @@ export function CarouselComments() {
 
     fetchCarousel();
   }, []);
-  const [comments, setComments] = useState<CarouselType[]>();
 
   const settings = {
     focusOnSelect: false,
@@ -88,11 +89,11 @@ export function CarouselComments() {
   );
 }
 
-const StyledCarousel = styled(StyledPublicationsText)`
+export const StyledCarousel = styled(StyledPublicationsText)`
   text-align: start;
 `;
 
-const StyledContainer = styled.div`
+export const StyledContainer = styled.div`
   & .slick-track {
     display: flex;
     justify-content: space-between;
@@ -143,7 +144,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledCarouselItem = styled.div`
+export const StyledCarouselItem = styled.div`
   box-shadow: 0px 4px 25px rgba(60, 35, 13, 0.1);
   border-radius: 10px;
   justify-content: center;
@@ -165,11 +166,11 @@ const StyledCarouselItem = styled.div`
   }
 `;
 
-const StyledOcupationContent = styled.div`
+export const StyledOcupationContent = styled.div`
   padding-left: 8px;
 `;
 
-const StyledOcupation = styled.div`
+export const StyledOcupation = styled.div`
   justify-content: flex-start;
   display: flex;
   margin-top: 14px;

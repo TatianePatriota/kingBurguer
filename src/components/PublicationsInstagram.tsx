@@ -69,7 +69,7 @@ export const StyledPublicationsText = styled.div`
   }
 `;
 
-const StyledHamburguersContainer = styled.div`
+export const StyledHamburguersContainer = styled.div`
   display: flex;
   position: relative;
   &::before,
@@ -96,10 +96,14 @@ const StyledHamburguersContainer = styled.div`
   }
 `;
 
-const StyledText = styled.div`
+export const StyledText = styled.div`
   background-color: ${({ theme }) => theme.colors.yellowDark};
   height: 30px;
   @media (max-width: 428px) {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
     display: none;
   }
 
@@ -107,14 +111,14 @@ const StyledText = styled.div`
     color: ${({ theme }) => theme.colors.titleBrown};
     text-transform: uppercase;
     text-align: center;
-    font-size: ${({ theme }) => theme.font.gutter.small}px;
+    font-size: ${({ theme }) => theme.font.size.default}px;
     font-weight: 400;
     font-family: ${({ theme }) => theme.fonts.fontLelita};
     margin: 0;
   }
 `;
 
-const StyledImageItem = styled.div<{ src: string }>`
+export const StyledImageItem = styled.div<{ src: string }>`
   background-image: url("${(props) => props.src}");
   width: 278px;
   height: 218px;
