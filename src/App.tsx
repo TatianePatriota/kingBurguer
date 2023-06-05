@@ -20,22 +20,39 @@ function App(): JSX.Element {
       <Navigation />
       <BannerHeader>
         <TextHeader
-          title="King Burguer"
+          title={
+            <>
+              King <span>Burger</span>
+            </>
+          }
+          text={
+            <>
+              Para quem tem um <span>Apetite de um REI!</span>
+            </>
+          }
           subTitle="Uma nova experiência!"
-          text=" Para quem tem um Apetite de um REI!"
           textLink="Comprar Agora"
         />
       </BannerHeader>
       <InformationsList items={informations} />
       <SpecialOffers />
       <Menu
-        title="Escolha o seu combo imperial, peça agora!"
+        title={
+          <>
+            Escolha o seu combo imperial, <span> peça agora!</span>
+          </>
+        }
         text="Temos vários tipos de pratos para a nossa realeza, fique esperto
         porque temos sempre promoção!"
         textLink="Ver Cardápio Completo"
       />
       <PersonalizedService
-        title="Atendimento Personalizado"
+        title={
+          <>
+            Atendimento
+            <span>Personalizado</span>
+          </>
+        }
         description="Todos os nossos clientes são tratados como rei e rainha, com a nossa
         culinária artesanal."
         textLink="Cardápio Imperial"
