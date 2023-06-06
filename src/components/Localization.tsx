@@ -22,11 +22,11 @@ export function Localization({
   );
 }
 
-const StyledLocalization = styled.div`
+export const StyledLocalization = styled.div`
   padding-bottom: 30px;
 `;
 
-const StyledPublications = styled(StyledPublicationsText)`
+export const StyledPublications = styled(StyledPublicationsText)`
   @media (max-width: 428px) {
     h1 {
       font-size: ${({ theme }) => theme.font.gutter.small}px;

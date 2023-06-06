@@ -29,9 +29,10 @@ export function PersonalizedService({
     </StyledPersonalizedMenu>
   );
 }
-const StyledPersonalizedMenu = styled(Container)`
+
+export const StyledPersonalizedMenu = styled(Container)`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 128px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreySecondary};
@@ -45,7 +46,7 @@ const StyledPersonalizedMenu = styled(Container)`
   }
 `;
 
-const StyledPersonalizedImage = styled.div`
+export const StyledPersonalizedImage = styled.div`
   background: url(${WomanEating});
   width: 430px;
   height: 455px;
@@ -55,7 +56,7 @@ const StyledPersonalizedImage = styled.div`
 
 export const StyledBackgroundColor = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundImageColor};
-  width: 570px;
+  width: 50%;
   height: 308px;
   border-radius: 35px 154px 154px 35px;
   display: flex;
@@ -71,8 +72,7 @@ export const StyledBackgroundColor = styled.div`
   }
 `;
 
-const StyledMenuText = styled.div`
-  width: 30%;
+export const StyledMenuText = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.brownBackground};
     text-transform: uppercase;

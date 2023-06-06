@@ -1,16 +1,27 @@
 import { Button } from "./Button";
-import { IconIFood, Instragram, WhatsAppIcon } from "./CommonIcons";
+import {
+  IconIFood,
+  Instragram,
+  MenuHamburguer,
+  WhatsAppIcon,
+} from "./CommonIcons";
 import styled from "styled-components";
 import { LogoEmpireBuguer } from "./LogoEmpireBurguer";
 import { Container } from "./Container";
 
-const optionsNav = ["Home", "Promoções", "Cardápio", "Comentários", "Contatos"];
-
 export function Navigation(): JSX.Element {
+  const optionsNav = [
+    "Home",
+    "Promoções",
+    "Cardápio",
+    "Comentários",
+    "Contatos",
+  ];
+
   return (
     <StyledBackground>
       <StyledNav>
-        <LogoEmpireBuguer title="Empire burguer" />
+        <LogoEmpireBuguer variant="primary" />
         <ul>
           {optionsNav.map((i, index) => (
             <li key={index}>
@@ -25,12 +36,27 @@ export function Navigation(): JSX.Element {
         <StyledButton>
           <WhatsAppIcon /> Contato
         </StyledButton>
+        <StyledMenuHamburguer>
+          <MenuHamburguer />
+        </StyledMenuHamburguer>
       </StyledNav>
     </StyledBackground>
   );
 }
 
-const StyledBackground = styled.section`
+export const StyledMenuHamburguer = styled.div`
+  & svg {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    & svg {
+      display: block;
+    }
+  }
+`;
+
+export const StyledBackground = styled.section`
   background-color: ${({ theme }) => theme.colors.navBackground};
   width: 100%;
   height: 64px;
@@ -64,9 +90,13 @@ export const StyledNav = styled(Container)`
     color: ${({ theme }) => theme.colors.titleBlack};
     font-weight: bold;
   }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
-const StyledIconNav = styled.div`
+export const StyledIconNav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,7 +107,7 @@ const StyledIconNav = styled.div`
   }
 `;
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
   font-size: ${({ theme }) => theme.font.size.small}px;
   color: ${({ theme }) => theme.colors.brownDark};
   align-items: center;

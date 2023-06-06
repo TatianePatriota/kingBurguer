@@ -76,7 +76,7 @@ export function Menu({ title, text, textLink }: ShowMenuType) {
   );
 }
 
-const StyledMenuContainer = styled.div`
+export const StyledMenuContainer = styled.div`
   margin-bottom: 300px;
   position: relative;
   width: 100%;
@@ -167,7 +167,7 @@ export const StyledMenuText = styled.div`
   }
 `;
 
-const StyledBackgroundBrown = styled.div`
+export const StyledBackgroundBrown = styled.div`
   background-color: ${({ theme }) => theme.colors.brownBackground};
   color: ${({ theme }) => theme.colors.menuColor};
   width: 50%;
@@ -181,7 +181,7 @@ const StyledBackgroundBrown = styled.div`
   }
 `;
 
-const StyledMenuPrices = styled.div`
+export const StyledMenuPrices = styled.div`
   margin-left: 30px;
   margin-top: 70px;
   h2 {

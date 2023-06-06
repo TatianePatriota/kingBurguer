@@ -42,7 +42,7 @@ export const StyledDeliveryCard = styled.div`
   margin-bottom: 8px;
 `;
 
-const StyledIcons = styled.div`
+export const StyledIcons = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundLight};
   padding: 15px;
   border-radius: 50%;

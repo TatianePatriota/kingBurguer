@@ -29,7 +29,7 @@ export function MenuOrders({
   );
 }
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.menuColor};
 
   a {
@@ -44,7 +44,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledMenuOrders = styled.div`
+export const StyledMenuOrders = styled.div`
   background-color: ${({ theme }) => theme.colors.red};
   display: flex;
   justify-content: space-evenly;
@@ -59,13 +59,13 @@ const StyledMenuOrders = styled.div`
   }
 `;
 
-const StyledPhoneIcon = styled.div`
+export const StyledPhoneIcon = styled.div`
   padding: 14px 20px;
   background-color: ${({ theme }) => theme.colors.backgroundRedLight};
   border-radius: 50%;
 `;
 
-const StyledMenuOrdersText = styled.div`
+export const StyledMenuOrdersText = styled.div`
   font-weight: 400;
   border-left: 1px solid ${({ theme }) => theme.colors.borderLight};
   padding-left: 15px;
