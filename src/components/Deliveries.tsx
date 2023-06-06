@@ -11,7 +11,7 @@ export type DeliveriesType = {
 
 export function Deliveries({ items }: DeliveriesType): JSX.Element {
   return (
-    <Container style={{ paddingTop: 300 }}>
+    <Container style={{ paddingTop: 200 }}>
       <StyledDeliveriesOptions>
         <StyledBackgroundColor>
           <StyledPhoneBurguer></StyledPhoneBurguer>
@@ -35,8 +35,14 @@ export function Deliveries({ items }: DeliveriesType): JSX.Element {
 
 const StyledPhoneBurguer = styled.div`
   background-image: url(${PhoneBurguer});
+  background-repeat: no-repeat;
   width: 370px;
   height: 535px;
+
+  @media (max-width: 428px) {
+    height: 500px;
+    background-position: center;
+  }
 `;
 
 const StyledDeliveriesOptions = styled.div`
@@ -46,5 +52,11 @@ const StyledDeliveriesOptions = styled.div`
 
   @media (max-width: 428px) {
     flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
