@@ -29,7 +29,6 @@ export const StyledTitle = styled.h2<{
       : theme.colors.titleBrown};
   text-transform: uppercase;
   font-weight: 400;
-  /* color: ${({ theme }) => theme.colors.titleBrown}; */
   font-family: ${({ theme }) => theme.fonts.fontLato};
   padding-left: 8px;
 
