@@ -43,5 +43,6 @@ export const theme = {
     borderLight: "rgba(29, 6, 5, 0.4)",
     copyColor: " rgba(2, 14, 31, 0.69)",
     brownSeconday: "#3A210B",
+    backgroundGray: "rgba(29, 6, 5, 0.15)",
   },
 };
