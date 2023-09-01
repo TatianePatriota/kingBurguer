@@ -7,7 +7,7 @@ import { Container } from "./Container";
 
 export function SpecialOffers(): JSX.Element {
   return (
-    <StyledContainerSpecialOffers>
+    <Container>
       <StyledTitleOffers>
         <h1>Ofertas especiais</h1>
         <p>
@@ -54,21 +54,24 @@ export function SpecialOffers(): JSX.Element {
           <a href="/">#empireburger </a>
         </StyledInstagramContent>
       </StyledContainerHours>
-    </StyledContainerSpecialOffers>
+    </Container>
   );
 }
 
-const StyledContainerSpecialOffers = styled(Container)``;
-
-const StyledOffersImages = styled.div`
+export const StyledOffersImages = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 428px) {
     flex-direction: column;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
-const StyledOffersText = styled.div`
+export const StyledOffersText = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.titleBrown};
 
@@ -90,7 +93,7 @@ const StyledOffersText = styled.div`
   }
 `;
 
-const StyledBurguerSpecialOffers = styled.div`
+export const StyledBurguerSpecialOffers = styled.div`
   background: url(${Burguer});
   height: 545px;
   width: 770px;
@@ -103,9 +106,14 @@ const StyledBurguerSpecialOffers = styled.div`
     height: 200px;
     width: 370px;
   }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 `;
 
-const StyledBurguerTitle = styled.div`
+export const StyledBurguerTitle = styled.div`
   padding: 12px;
   h2 {
     font-size: ${({ theme }) => theme.font.gutter.small}px;
@@ -113,6 +121,7 @@ const StyledBurguerTitle = styled.div`
     font-family: ${({ theme }) => theme.fonts.fontLelita};
     line-height: 28px;
     text-transform: uppercase;
+    margin: 0;
   }
 
   p {
@@ -124,7 +133,7 @@ const StyledBurguerTitle = styled.div`
   }
 `;
 
-const StyledIceCreamSpecialOffers = styled.div`
+export const StyledIceCreamSpecialOffers = styled.div`
   background: url(${IceCream});
   height: 200px;
   width: 370px;
@@ -133,7 +142,7 @@ const StyledIceCreamSpecialOffers = styled.div`
   margin-bottom: 30px;
 `;
 
-const StyledPotatoSpecialOffers = styled.div`
+export const StyledPotatoSpecialOffers = styled.div`
   background: url(${Potato});
   height: 200px;
   width: 370px;
@@ -141,7 +150,7 @@ const StyledPotatoSpecialOffers = styled.div`
   background-repeat: no-repeat;
 `;
 
-const StyledTitleOffers = styled.div`
+export const StyledTitleOffers = styled.div`
   h1 {
     font-size: ${({ theme }) => theme.font.gutter.large}px;
     font-family: ${({ theme }) => theme.fonts.fontLelita};
@@ -161,7 +170,7 @@ const StyledTitleOffers = styled.div`
   }
 `;
 
-const StyledOpeningHours = styled.div`
+export const StyledOpeningHours = styled.div`
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.red};
@@ -197,12 +206,12 @@ const StyledOpeningHours = styled.div`
   }
 `;
 
-const StyledTextInformations = styled.div`
+export const StyledTextInformations = styled.div`
   padding-left: 20px;
   border-left: 1px solid ${({ theme }) => theme.colors.redDark};
 `;
 
-const StyledContainerHours = styled.div`
+export const StyledContainerHours = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 64px;
@@ -210,9 +219,13 @@ const StyledContainerHours = styled.div`
   @media (max-width: 428px) {
     flex-direction: column;
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 40px;
+  }
 `;
 
-const StyledInstagramContent = styled.div`
+export const StyledInstagramContent = styled.div`
   font-weight: 400;
   padding-left: 30px;
 

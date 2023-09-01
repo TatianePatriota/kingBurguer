@@ -31,7 +31,7 @@ export function InformationItem({ information }: CommonProps): JSX.Element {
   );
 }
 
-const Styledinformation = styled.div`
+export const Styledinformation = styled.div`
   display: flex;
   border-left: 1px solid ${({ theme }) => theme.colors.lightGrey};
   padding-left: 50px;
@@ -40,9 +40,24 @@ const Styledinformation = styled.div`
     border: none;
     padding-left: 0;
   }
+  @media (max-width: 458px) {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    border-left: none;
+    padding: 0;
+    border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `;
 
-const StyledInformationHeader = styled.div`
+export const StyledInformationHeader = styled.div`
   font-weight: 400;
 
   h3 {
@@ -63,7 +78,7 @@ const StyledInformationHeader = styled.div`
   }
 `;
 
-const StyledBackgroundIcons = styled.div`
+export const StyledBackgroundIcons = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundLight};
   padding: 20px;
   border-radius: 50%;
